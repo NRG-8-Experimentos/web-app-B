@@ -307,5 +307,82 @@
     "deleteMemberTitle": "Delete Member",
     "deleteMemberDescription": "Are you sure you want to delete {memberName} from the group?",
     "noMembers": "Your group has no members. Share the code with your teammates so they can join the group."
+  },
+  "analyticsMember": {
+    "overview": {
+      "title": "General Summary",
+      "label": "Task status",
+      "metrics": {
+        "completed": "Completed",
+        "done": "Done",
+        "inProgress": "In progress",
+        "pending": "Pending",
+        "overdue": "Overdue"
+      }
+    },
+    "taskDistribution": {
+      "title": "Task Distribution",
+      "label": "List and total",
+      "loading": "Loading tasks...",
+      "noTasks": "No tasks assigned.",
+      "total": "Total",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "rescheduled": {
+      "title": "Total Rescheduled Count",
+      "label": "Rescheduled",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "avgCompletion": {
+      "title": "Average Completion Time",
+      "label": "Average duration"
+    },
+    "inProgress": {
+      "title": "In Progress Tasks Time",
+      "label": "Individual and total duration",
+      "noTasks": "No tasks in progress.",
+      "total": "Total:"
+    }
+  },
+  "analyticsLeader": {
+    "overview": {
+      "title": "General Summary",
+      "label": "Task status",
+      "metrics": {
+        "completed": "Completed",
+        "done": "Done",
+        "inProgress": "In progress",
+        "pending": "Pending",
+        "overdue": "Overdue"
+      },
+      "allMembers": "All members:"
+    },
+    "taskDistribution": {
+      "title": "Task Distribution",
+      "label": "List and total",
+      "noTasks": "Not available",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "rescheduled": {
+      "title": "Total Rescheduled Count",
+      "label": "Rescheduled",
+      "membersTitle": "Members with rescheduled tasks:",
+      "noMembers": "Not available",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "avgCompletion": {
+      "title": "Average Completion Time",
+      "label": "Average duration",
+      "noTime": "No time recorded"
+    },
+    "inProgress": {
+      "title": "In Progress Tasks Time",
+      "label": "Total duration for each member",
+      "noTime": "No time recorded"
+    }
   }
 }

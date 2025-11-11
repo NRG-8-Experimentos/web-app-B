@@ -307,5 +307,82 @@
     "deleteMemberTitle": "Eliminar integrante",
     "deleteMemberDescription": "¿Estás seguro que deseas eliminar a {memberName} del grupo?",
     "noMembers": "Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo"
+  },
+  "analyticsMember": {
+    "overview": {
+      "title": "Resumen General",
+      "label": "Estado de las tareas",
+      "metrics": {
+        "completed": "Completadas",
+        "done": "Terminadas",
+        "inProgress": "En progreso",
+        "pending": "Pendientes",
+        "overdue": "Atrasadas"
+      }
+    },
+    "taskDistribution": {
+      "title": "Distribución de Tareas",
+      "label": "Listado y total",
+      "loading": "Cargando tareas...",
+      "noTasks": "No hay tareas asignadas.",
+      "total": "Total",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "rescheduled": {
+      "title": "Cantidad total de reprogramaciones",
+      "label": "Reprogramadas",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "avgCompletion": {
+      "title": "Tiempo Promedio de Finalización",
+      "label": "Duración promedio"
+    },
+    "inProgress": {
+      "title": "Tiempo de Tareas en Progreso",
+      "label": "Duración individual y total",
+      "noTasks": "No hay tareas en progreso.",
+      "total": "Total:"
+    }
+  },
+  "analyticsLeader": {
+    "overview": {
+      "title": "Resumen General",
+      "label": "Estado de las tareas",
+      "metrics": {
+        "completed": "Completadas",
+        "done": "Terminadas",
+        "inProgress": "En progreso",
+        "pending": "Pendientes",
+        "overdue": "Atrasadas"
+      },
+      "allMembers": "Todos los miembros:"
+    },
+    "taskDistribution": {
+      "title": "Distribución de Tareas",
+      "label": "Listado y total",
+      "noTasks": "No disponible",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "rescheduled": {
+      "title": "Cantidad total de reprogramaciones",
+      "label": "Reprogramadas",
+      "membersTitle": "Miembros con tareas reprogramadas:",
+      "noMembers": "No disponible",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "avgCompletion": {
+      "title": "Tiempo Promedio de Finalización",
+      "label": "Duración promedio",
+      "noTime": "Sin tiempo registrado"
+    },
+    "inProgress": {
+      "title": "Tiempo de Tareas en Progreso",
+      "label": "Duración total de cada miembro",
+      "noTime": "Sin tiempo registrado"
+    }
   }
 }
