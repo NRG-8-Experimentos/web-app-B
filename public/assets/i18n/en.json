@@ -237,5 +237,12 @@
     "searchButton": "Search Group",
     "noGroupFound": "Search for a group by its unique code, ask the group leader or a team member.",
     "requestJoin": "Request to join"
-  }
+  },
+  "accept": "Accept",
+  "reject": "Reject",
+  "invitationDialog": {
+    "1": "You are about to accept:",
+    "2": "into the group, are you sure you want to proceed?"
+  },
+  "noInvitations": "You have no pending invitations."
 }

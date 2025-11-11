@@ -237,5 +237,12 @@
     "searchButton": "Buscar Grupo",
     "noGroupFound": "Busca un grupo por su código único, solicítalo al líder de grupo o a uno de los miembros del equipo.",
     "requestJoin": "Solicitar unirse"
-  }
+  },
+  "accept": "Aceptar",
+  "reject": "Rechazar",
+  "invitationDialog": {
+    "1": "Estas por aceptar a:",
+    "2": "al grupo, ¿Estás seguro que deseas aceptar la invitación?"
+  },
+  "noInvitations": "No tienes invitaciones pendientes."
 }
