@@ -278,5 +278,34 @@
     "actions": {
       "save": "Save Changes"
     }
+  },
+  "taskMemberDetails": {
+    "filterLabel": "State:",
+    "options": {
+      "all": "All",
+      "IN_PROGRESS": "In progress",
+      "COMPLETED": "Completed",
+      "EXPIRED": "Expired",
+      "ON_HOLD": "On hold",
+      "DONE": "Done"
+    },
+    "dueDate": "Due date:",
+    "noTasks": "No tasks to display for this member."
+  },
+  "noGroupMemberDisplay": {
+    "noGroup": "You don't have a group yet",
+    "searchButton": "Search Group"
+  },
+  "noGroupDisplay": {
+    "noGroup": "You haven't created your group yet",
+    "createButton": "Create Group"
+  },
+  "groupDisplay": {
+    "groupTitle": "Group",
+    "membersTitle": "Members",
+    "codeLabel": "Code",
+    "deleteMemberTitle": "Delete Member",
+    "deleteMemberDescription": "Are you sure you want to delete {memberName} from the group?",
+    "noMembers": "Your group has no members. Share the code with your teammates so they can join the group."
   }
 }

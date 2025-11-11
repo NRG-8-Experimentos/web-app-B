@@ -278,5 +278,34 @@
     "actions": {
       "save": "Guardar Cambios"
     }
+  },
+  "taskMemberDetails": {
+    "filterLabel": "Estado:",
+    "options": {
+      "all": "Todos",
+      "IN_PROGRESS": "En progreso",
+      "COMPLETED": "Completadas",
+      "EXPIRED": "Atrasadas",
+      "ON_HOLD": "En espera",
+      "DONE": "Terminadas"
+    },
+    "dueDate": "Vence:",
+    "noTasks": "No hay tareas para mostrar para este miembro."
+  },
+  "noGroupMemberDisplay": {
+    "noGroup": "No tienes un grupo todavía",
+    "searchButton": "Buscar Grupo"
+  },
+  "noGroupDisplay": {
+    "noGroup": "No has creado tu grupo todavía",
+    "createButton": "Crear Grupo"
+  },
+  "groupDisplay": {
+    "groupTitle": "Grupo",
+    "membersTitle": "Miembros",
+    "codeLabel": "Código",
+    "deleteMemberTitle": "Eliminar integrante",
+    "deleteMemberDescription": "¿Estás seguro que deseas eliminar a {memberName} del grupo?",
+    "noMembers": "Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo"
   }
 }
