@@ -1,3 +1,22 @@
 {
-  "test": "español"
+  "login": {
+    "title": "Bienvenido a Synhub",
+    "username": {
+      "label": "Usuario",
+      "placeholder": "Ingresa tu usuario",
+      "required": "Se requiere el usuario"
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Ingresa tu contraseña",
+      "required": "Se requiere la contraseña"
+    },
+    "button": {
+      "sign_in": "Iniciar Sesión",
+      "sign_up": "Registrarse"
+    },
+    "captcha": {
+      "required": "Se requiere el Captcha"
+    }
+  }
 }

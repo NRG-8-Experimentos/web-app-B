@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {LoginEventService} from '../../services/login-event.service';
 import {NgxCaptchaModule, ReCaptcha2Component} from 'ngx-captcha';
 import {MatButton} from '@angular/material/button';
+import {TranslatePipe} from '@ngx-translate/core';
+import {LanguageSwitcherComponent} from '@app/iam/components/language-switcher/language-switcher';
 
 @Component({
   selector: 'app-log-in',
@@ -22,7 +24,9 @@ import {MatButton} from '@angular/material/button';
     MatIconModule,
     HttpClientModule,
     NgxCaptchaModule,
-    MatButton
+    MatButton,
+    TranslatePipe,
+    LanguageSwitcherComponent
   ],
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.css'
