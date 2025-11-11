@@ -91,5 +91,31 @@
       "requests": "Solicitudes y Validaciones",
       "analytics": "Mi desempeño"
     }
+  },
+  "mainLeader": {
+    "title": "Dashboard de métricas",
+    "subtitle": "Resumen ejecutivo del grupo",
+    "metrics": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "Pendientes",
+      "overdue": "Atrasadas"
+    },
+    "members": {
+      "title": "Integrantes del grupo:",
+      "noMembers": "No hay integrantes en el grupo."
+    }
+  },
+  "mainMember": {
+    "title": "Dashboard de métricas",
+    "subtitle": "Resumen resumido de tu actividad",
+    "metrics": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "Pendientes",
+      "overdue": "Atrasadas"
+    }
   }
 }
