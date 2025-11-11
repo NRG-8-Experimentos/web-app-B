@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 import {Group} from '@app/groups/model/group.entity';
 import {DetailsService} from '@app/shared/services/details.service';
 import {GroupService} from '@app/groups/services/group.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitation-member',
@@ -17,7 +18,8 @@ import {GroupService} from '@app/groups/services/group.service';
     MatLabel,
     MatIconModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslatePipe
   ],
   templateUrl: './invitation-member.component.html',
   styleUrl: './invitation-member.component.css'

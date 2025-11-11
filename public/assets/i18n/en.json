@@ -223,5 +223,19 @@
       "approved": "Approved"
     },
     "noRequests": "No requests pending."
+  },
+  "invitationMember": {
+    "activeInvitationTitle": "You have an active invitation to join the group",
+    "description": "Description:",
+    "memberCount": "Member count:",
+    "code": "Code:",
+    "reviewRequest": "Review request status",
+    "cancelRequest": "Cancel request",
+    "joinTitle": "Join a group",
+    "searchLabel": "Search group",
+    "searchPlaceholder": "Search group",
+    "searchButton": "Search Group",
+    "noGroupFound": "Search for a group by its unique code, ask the group leader or a team member.",
+    "requestJoin": "Request to join"
   }
 }

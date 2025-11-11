@@ -223,7 +223,19 @@
       "approved": "Aprobadas"
     },
     "noRequests": "No hay solicitudes pendientes."
+  },
+  "invitationMember": {
+    "activeInvitationTitle": "¡Tienes una invitación activa para unirte al grupo",
+    "description": "Descripción:",
+    "memberCount": "Cantidad de miembros:",
+    "code": "Código:",
+    "reviewRequest": "Revisar estado de la solicitud",
+    "cancelRequest": "Cancelar solicitud",
+    "joinTitle": "Únete a un grupo",
+    "searchLabel": "Buscar grupo",
+    "searchPlaceholder": "Buscar grupo",
+    "searchButton": "Buscar Grupo",
+    "noGroupFound": "Busca un grupo por su código único, solicítalo al líder de grupo o a uno de los miembros del equipo.",
+    "requestJoin": "Solicitar unirse"
   }
-
-
 }
