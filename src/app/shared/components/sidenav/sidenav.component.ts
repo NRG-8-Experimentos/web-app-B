@@ -7,6 +7,8 @@ import {Leader} from '../../model/leader.entity';
 import {Member} from '../../model/member.entity';
 import {LOGOUT_OPTION} from '../../../app';
 import {DomSanitizer} from '@angular/platform-browser';
+import {TranslatePipe} from '@ngx-translate/core';
+import {LanguageSwitcherComponent} from '@app/iam/components/language-switcher/language-switcher';
 
 interface SideNavToggle{
   screenWidth: number;
@@ -18,7 +20,9 @@ interface SideNavToggle{
   imports: [
     RouterLink,
     NgClass,
-    RouterLinkActive
+    RouterLinkActive,
+    TranslatePipe,
+    LanguageSwitcherComponent
   ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css'],

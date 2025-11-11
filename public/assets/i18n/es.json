@@ -74,5 +74,22 @@
       "passwordMismatch": "Las contraseñas no coinciden",
       "generic": "Ocurrió un error. Intenta nuevamente."
     }
+  },
+  "menu": {
+    "logout": "Cerrar Sesión",
+    "leaders": {
+      "myGroup": "Mi Grupo",
+      "members": "Integrantes",
+      "invitations": "Invitaciones",
+      "tasks": "Tareas",
+      "analytics": "Reportes",
+      "requests": "Solicitudes y Validaciones"
+    },
+    "members": {
+      "myGroup": "Mi Grupo",
+      "tasks": "Tareas",
+      "requests": "Solicitudes y Validaciones",
+      "analytics": "Mi desempeño"
+    }
   }
 }

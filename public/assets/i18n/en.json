@@ -74,5 +74,22 @@
       "passwordMismatch": "Passwords do not match",
       "generic": "An error occurred. Please try again."
     }
+  },
+  "menu": {
+    "logout": "Logout",
+    "leaders": {
+      "myGroup": "My Group",
+      "members": "Members",
+      "invitations": "Invitations",
+      "tasks": "Tasks",
+      "analytics": "Reports",
+      "requests": "Requests & Validations"
+    },
+    "members": {
+      "myGroup": "My Group",
+      "tasks": "Tasks",
+      "requests": "Requests & Validations",
+      "analytics": "My Performance"
+    }
   }
 }
