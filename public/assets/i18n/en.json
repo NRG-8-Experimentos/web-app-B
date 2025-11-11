@@ -190,6 +190,20 @@
     "send": "Send comment",
     "cancel": "Cancel",
     "loading": "Loading…"
-  }
-
+  },
+  "memberTaskItem": {
+    "noDescription": "No description available.",
+    "dueDate": "Due date:",
+    "remainingTime": "Time remaining:",
+    "sendComment": "Send a comment",
+    "markDone": "Mark as completed"
+  },
+  "leaderTaskItem": {
+    "noDescription": "No description available.",
+    "dueDate": "Due date:",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "deleteTaskMessage": "Delete Task",
+  "confirmDelete": "Are you sure you want to delete this task"
 }

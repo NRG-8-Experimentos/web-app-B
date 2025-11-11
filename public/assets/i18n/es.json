@@ -190,6 +190,20 @@
     "send": "Enviar comentario",
     "cancel": "Cancelar",
     "loading": "Cargando…"
-  }
-
+  },
+  "memberTaskItem": {
+    "noDescription": "Sin descripción",
+    "dueDate": "Fecha de entrega:",
+    "remainingTime": "Tiempo restante:",
+    "sendComment": "Enviar un comentario",
+    "markDone": "Marcar como completada"
+  },
+  "leaderTaskItem": {
+    "noDescription": "Sin descripción",
+    "dueDate": "Vence:",
+    "edit": "Editar",
+    "delete": "Borrar"
+  },
+  "deleteTaskMessage": "Borrar Tarea",
+  "confirmDelete": "¿Estás seguro(a) de que deseas eliminar esta tarea"
 }
