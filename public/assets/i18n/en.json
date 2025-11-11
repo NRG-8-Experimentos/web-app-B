@@ -157,5 +157,27 @@
     "dueDate": "Due date",
     "save": "Save",
     "cancel": "Cancel"
+  },
+  "createTask": {
+    "title": "Create task",
+    "fields": {
+      "title": {
+        "placeholder": "Title"
+      },
+      "description": {
+        "placeholder": "Description"
+      },
+      "assignee": {
+        "label": "Assign to",
+        "none": "Select a member"
+      },
+      "dueDate": {
+        "label": "Due date"
+      }
+    },
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel"
+    }
   }
 }

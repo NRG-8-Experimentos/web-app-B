@@ -7,12 +7,12 @@
 
     <div class="field">
       <label>{{ 'editTask.title'|translate }}</label>
-      <input [(ngModel)]="title" name="title" placeholder="Título" />
+      <input [(ngModel)]="title" name="title" placeholder="{{ 'editTask.title'|translate }}" />
     </div>
 
     <div class="field">
       <label>{{ 'editTask.description'|translate }}</label>
-      <textarea [(ngModel)]="description" name="description" rows="4" placeholder="Descripción"></textarea>
+      <textarea [(ngModel)]="description" name="description" rows="4" placeholder="{{ 'editTask.description'|translate }}"></textarea>
     </div>
 
     <mat-form-field appearance="outline" class="w-full assignee-field">

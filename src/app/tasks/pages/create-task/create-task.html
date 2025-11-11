@@ -1,12 +1,12 @@
 <section class="create">
-  <h3>Crear tarea</h3>
+  <h3>{{'createTask.title'|translate}}</h3>
 
   <div class="grid">
-    <input placeholder="Título" [(ngModel)]="title" />
-    <textarea rows="2" placeholder="Descripción" [(ngModel)]="description"></textarea>
+    <input placeholder="{{'createTask.fields.title.placeholder'|translate}}" [(ngModel)]="title" />
+    <textarea rows="2" placeholder="{{'createTask.fields.description.placeholder'|translate}}" [(ngModel)]="description"></textarea>
 
     <mat-form-field appearance="outline" class="w-full assignee-field">
-      <mat-label>Asignar a</mat-label>
+      <mat-label>{{'createTask.fields.assignee.label'|translate}}</mat-label>
 
       <mat-select [(ngModel)]="memberId">
         <mat-select-trigger>
@@ -16,7 +16,7 @@
               <span class="trigger-text">{{ memberLabel(selectedMember!) }}</span>
             </ng-container>
             <ng-template #noneTpl>
-              <span class="muted">Selecciona un miembro</span>
+              <span class="muted">{{'createTask.fields.assignee.none'|translate}}</span>
             </ng-template>
           </span>
         </mat-select-trigger>
@@ -31,13 +31,13 @@
     </mat-form-field>
 
     <div class="dt-field">
-      <label for="due">Vencimiento</label>
+      <label for="due">{{'createTask.fields.dueDate.label'|translate}}</label>
       <input id="due" type="datetime-local" [(ngModel)]="dueDateTime" />
     </div>
   </div>
 
   <div class="actions">
-    <button mat-flat-button color="primary" class="btn-save" (click)="save()">Guardar</button>
-    <button mat-flat-button color="warn" class="btn-cancel" (click)="cancel()">Cancelar</button>
+    <button mat-flat-button color="primary" class="btn-save" (click)="save()">{{'createTask.actions.save'|translate}}</button>
+    <button mat-flat-button color="warn" class="btn-cancel" (click)="cancel()">{{'createTask.actions.cancel'|translate}}</button>
   </div>
 </section>

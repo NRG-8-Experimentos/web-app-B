@@ -157,5 +157,27 @@
     "dueDate": "Fecha de vencimiento",
     "save": "Guardar",
     "cancel": "Cancelar"
+  },
+  "createTask": {
+    "title": "Crear tarea",
+    "fields": {
+      "title": {
+        "placeholder": "Título"
+      },
+      "description": {
+        "placeholder": "Descripción"
+      },
+      "assignee": {
+        "label": "Asignar a",
+        "none": "Selecciona un miembro"
+      },
+      "dueDate": {
+        "label": "Vencimiento"
+      }
+    },
+    "actions": {
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    }
   }
 }
