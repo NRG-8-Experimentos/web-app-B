@@ -5,11 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TasksApiService, Task } from '../../services/tasks-api.service';
 import {RequestApiService} from '@app/requests/services/request-api.service';
 import {TaskStatus} from '@app/tasks/model/task.model';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-comment-task',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslatePipe],
   templateUrl: './comment-task.html',
   styleUrls: ['./comment-task.css']
 })

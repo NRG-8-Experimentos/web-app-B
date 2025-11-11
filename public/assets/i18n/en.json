@@ -179,5 +179,17 @@
       "save": "Save",
       "cancel": "Cancel"
     }
+  },
+  "commentTask": {
+    "title": "Task comments",
+    "status": "Status",
+    "noDescription": "No description available.",
+    "dueDate": "Due date",
+    "remainingTime": "Time remaining",
+    "commentPlaceholder": "Comment:",
+    "send": "Send comment",
+    "cancel": "Cancel",
+    "loading": "Loading…"
   }
+
 }

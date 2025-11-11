@@ -179,5 +179,17 @@
       "save": "Guardar",
       "cancel": "Cancelar"
     }
+  },
+  "commentTask": {
+    "title": "Comentarios de la tarea",
+    "status": "Estado",
+    "noDescription": "Sin descripción",
+    "dueDate": "Fecha de entrega",
+    "remainingTime": "Tiempo restante",
+    "commentPlaceholder": "Comentario:",
+    "send": "Enviar comentario",
+    "cancel": "Cancelar",
+    "loading": "Cargando…"
   }
+
 }

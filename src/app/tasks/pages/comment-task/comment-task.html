@@ -1,18 +1,18 @@
 <section class="card">
   <header class="card__head">
-    <h3 class="card__title">{{ task?.title || 'Tarea' }}</h3>
-    <span class="badge">{{ task?.status || '—' }}</span>
+    <h3 class="card__title">{{ task?.title || ('commentTask.title' | translate) }}</h3>
+    <span class="badge">{{ task?.status || ('commentTask.status' | translate) }}</span>
   </header>
 
   <div class="divider"></div>
 
-  <div *ngIf="loading" class="loading">Cargando…</div>
+  <div *ngIf="loading" class="loading">{{'commentTask.status'|translate}}</div>
 
   <ng-container *ngIf="!loading">
-    <p class="desc">{{ task?.description || 'Sin descripción' }}</p>
+    <p class="desc">{{ task?.description || ('commentTask.noDescription' | translate) }}</p>
 
     <div class="meta">
-      <span class="muted">Fecha de entrega: {{ dueLabel }}</span>
+      <span class="muted">{{'commentTask.dueDate'|translate}}: {{ dueLabel }}</span>
     </div>
 
     <div class="progress">
@@ -20,18 +20,18 @@
     </div>
 
     <div class="meta">
-      <span class="muted">Tiempo restante: {{ remainingLabel }}</span>
+      <span class="muted">{{'commentTask.remainingTime'|translate}}: {{ remainingLabel }}</span>
     </div>
 
     <div class="comment">
-      <textarea rows="5" placeholder="Comentario:" [(ngModel)]="comment"></textarea>
+      <textarea rows="5" placeholder="{{'commentTask.commentPlaceholder'|translate}}" [(ngModel)]="comment"></textarea>
     </div>
 
     <footer class="actions">
       <button type="button" class="btn btn-comment" [disabled]="!comment.trim() || saving" (click)="submit()">
-        Enviar comentario
+        {{'commentTask.send'|translate}}
       </button>
-      <button type="button" class="btn btn-cancel" (click)="cancel()">Cancelar</button>
+      <button type="button" class="btn btn-cancel" (click)="cancel()">{{'commentTask.cancel'|translate}}</button>
     </footer>
   </ng-container>
 </section>
