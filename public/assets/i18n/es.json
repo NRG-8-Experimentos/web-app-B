@@ -146,5 +146,16 @@
       "overdue": "Atrasadas",
       "all": "Todas"
     }
+  },
+  "editTask": {
+    "editTask": "Editar Tarea",
+    "loading": "Cargando...",
+    "title": "Título",
+    "description": "Descripción",
+    "assignTo": "Asignar a",
+    "wAssign": "Sin asignar",
+    "dueDate": "Fecha de vencimiento",
+    "save": "Guardar",
+    "cancel": "Cancelar"
   }
 }

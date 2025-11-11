@@ -146,5 +146,16 @@
       "overdue": "Overdue",
       "all": "All"
     }
+  },
+  "editTask": {
+    "editTask": "Edit Task",
+    "loading": "Loading...",
+    "title": "Title",
+    "description": "Description",
+    "assignTo": "Assign to",
+    "wAssign": "Without assign",
+    "dueDate": "Due date",
+    "save": "Save",
+    "cancel": "Cancel"
   }
 }
