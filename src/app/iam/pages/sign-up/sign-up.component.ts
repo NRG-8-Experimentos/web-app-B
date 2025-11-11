@@ -7,6 +7,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
 import {AuthService} from '../../services/auth.service';
 import {NgxCaptchaModule, ReCaptcha2Component} from 'ngx-captcha';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up.component',
@@ -18,7 +19,8 @@ import {NgxCaptchaModule, ReCaptcha2Component} from 'ngx-captcha';
     MatIconModule,
     MatButtonToggleGroup,
     MatButtonToggle,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    TranslatePipe
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'

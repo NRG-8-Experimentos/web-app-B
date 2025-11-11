@@ -18,5 +18,61 @@
     "captcha": {
       "required": "Captcha is required"
     }
+  },
+  "signup": {
+    "title": "Register",
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter your name",
+      "required": "Name is required"
+    },
+    "surname": {
+      "label": "Surname",
+      "placeholder": "Enter your surname",
+      "required": "Surname is required"
+    },
+    "username": {
+      "label": "Username",
+      "placeholder": "Enter your username",
+      "required": "Username is required"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "required": "Email is required",
+      "invalid": "Enter a valid email address"
+    },
+    "imgUrl": {
+      "label": "Profile image URL",
+      "placeholder": "Enter profile image URL",
+      "required": "Profile image URL is required"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "required": "Password is required"
+    },
+    "confirmPassword": {
+      "label": "Confirm password",
+      "placeholder": "Confirm your password",
+      "required": "Password confirmation is required"
+    },
+    "role": {
+      "label": "Role",
+      "options": {
+        "leader": "Leader",
+        "member": "Member"
+      }
+    },
+    "captcha": {
+      "required": "Please complete the reCAPTCHA."
+    },
+    "buttons": {
+      "register": "Register"
+    },
+    "validation": {
+      "passwordMismatch": "Passwords do not match",
+      "generic": "An error occurred. Please try again."
+    }
   }
 }
