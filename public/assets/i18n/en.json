@@ -205,5 +205,23 @@
     "delete": "Delete"
   },
   "deleteTaskMessage": "Delete Task",
-  "confirmDelete": "Are you sure you want to delete this task"
+  "confirmDelete": "Are you sure you want to delete this task",
+  "validationPage": {
+    "comment": "Comment:",
+    "developmentTime": "Development time",
+    "assignedDevelopmentTime": "Assigned development time",
+    "reprogram": "Reschedule",
+    "markCompleted": "Mark as completed",
+    "deny": "Deny"
+  },
+  "requestsMember": {
+    "title": "Requests",
+    "filterLabel": "Status:",
+    "options": {
+      "all": "All",
+      "pending": "Pending",
+      "approved": "Approved"
+    },
+    "noRequests": "No requests pending."
+  }
 }

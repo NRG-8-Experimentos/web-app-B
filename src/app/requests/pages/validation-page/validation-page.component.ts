@@ -3,11 +3,13 @@ import {Router} from '@angular/router';
 import {RequestApiService} from '@app/requests/services/request-api.service';
 import {Request} from '@app/requests/model/request.entity';
 import {NgStyle} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-validation-page',
   imports: [
-    NgStyle
+    NgStyle,
+    TranslatePipe
   ],
   templateUrl: './validation-page.component.html',
   styleUrl: './validation-page.component.css'

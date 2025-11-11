@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import {RequestApiService} from '@app/requests/services/request-api.service';
 import {Request} from '@app/requests/model/request.entity';
 import {RequestCardListComponent} from '@app/requests/components/request-card-list/request-card-list.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-requests-leader',
   imports: [
-    RequestCardListComponent
+    RequestCardListComponent,
+    TranslatePipe
   ],
   templateUrl: './requests-leader.component.html',
   styleUrl: './requests-leader.component.scss'

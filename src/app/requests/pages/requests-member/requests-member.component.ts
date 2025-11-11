@@ -4,13 +4,15 @@ import {RequestCardListComponent} from "@app/requests/components/request-card-li
 import {RequestApiService} from '@app/requests/services/request-api.service';
 import {Request} from '@app/requests/model/request.entity';
 import {FormsModule} from '@angular/forms';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-requests-member',
   imports: [
     CommonModule,
     RequestCardListComponent,
-    FormsModule
+    FormsModule,
+    TranslatePipe
   ],
   templateUrl: './requests-member.component.html',
   styleUrl: './requests-member.component.scss'

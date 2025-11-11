@@ -205,5 +205,25 @@
     "delete": "Borrar"
   },
   "deleteTaskMessage": "Borrar Tarea",
-  "confirmDelete": "¿Estás seguro(a) de que deseas eliminar esta tarea"
+  "confirmDelete": "¿Estás seguro(a) de que deseas eliminar esta tarea",
+  "validationPage": {
+    "comment": "Comentario:",
+    "developmentTime": "Tiempo de desarrollo",
+    "assignedDevelopmentTime": "Tiempo de desarrollo asignado",
+    "reprogram": "Reprogramar",
+    "markCompleted": "Marcar como completado",
+    "deny": "Denegar"
+  },
+  "requestsMember": {
+    "title": "Solicitudes",
+    "filterLabel": "Estado:",
+    "options": {
+      "all": "Todas",
+      "pending": "Pendientes",
+      "approved": "Aprobadas"
+    },
+    "noRequests": "No hay solicitudes pendientes."
+  }
+
+
 }

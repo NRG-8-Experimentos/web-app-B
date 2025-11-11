@@ -9,11 +9,11 @@
       <div class="card-inner">
         <div class="card-title">{{ request.task.title }}</div>
         <div class="divider"></div>
-        <div class="description">Comentario: {{ request.task.description }}</div>
+        <div class="description">{{'validationPage.comment'|translate}} {{ request.task.description }}</div>
       </div>
       <div class="dates">
         <div class="date-label">
-          {{ request.task.status === 'COMPLETED' ? 'Tiempo de desarrollo' : 'Tiempo de desarrollo asignado' }}
+          {{ request.task.status === 'COMPLETED' ? ('validationPage.developmentTime'|translate) : ('validationPage.assignedDevelopmentTime'|translate) }}
         </div>
         <div class="date-value">
           @if (request.task.status === 'COMPLETED') {
@@ -32,7 +32,7 @@
 
     <button class="action-btn reprogram" (click)="reprogram()">
       <span class="material-icons">date_range</span>
-      Reprogramar
+      {{'validationPage.reprogram'|translate}}
     </button>
 
     @if (request.requestType === 'SUBMISSION') {
@@ -41,7 +41,7 @@
         (click)="markAsCompleted()"
       >
         <span class="material-icons">check</span>
-        Marcar como completado
+        {{'validationPage.markCompleted'|translate}}
       </button>
     }
 
@@ -51,7 +51,7 @@
         (click)="denyModification()"
       >
         <span class="material-icons">clear</span>
-        Denegar
+        {{'validationPage.deny'|translate}}
       </button>
     }
   </div>
