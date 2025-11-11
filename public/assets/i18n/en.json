@@ -117,5 +117,34 @@
       "pending": "Pending",
       "overdue": "Overdue"
     }
+  },
+  "viewTask": {
+    "return": "Return",
+    "loading": "Loading task details...",
+    "noDescription": "No description available."
+  },
+  "taskMember": {
+    "state": "State:",
+    "noTasks": "No tasks assigned.",
+    "options": {
+      "completed": "Completed",
+      "done": "Done",
+      "inProgress": "In progress",
+      "pending": "On hold",
+      "overdue": "Overdue",
+      "all": "All"
+    }
+  },
+  "taskLeader": {
+    "state": "State:",
+    "noTasks": "No tasks programed.",
+    "options": {
+      "completed": "Completed",
+      "done": "Done",
+      "inProgress": "In progress",
+      "pending": "On hold",
+      "overdue": "Overdue",
+      "all": "All"
+    }
   }
 }

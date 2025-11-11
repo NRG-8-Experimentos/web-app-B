@@ -117,5 +117,34 @@
       "pending": "Pendientes",
       "overdue": "Atrasadas"
     }
+  },
+  "viewTask": {
+    "return": "Volver",
+    "loading": "Cargando detalles de la tarea...",
+    "noDescription": "No hay descripción disponible."
+  },
+  "taskMember": {
+    "state": "Estado:",
+    "noTasks": "No hay tareas asignadas.",
+    "options": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "En espera",
+      "overdue": "Atrasadas",
+      "all": "Todas"
+    }
+  },
+  "taskLeader": {
+    "state": "Estado:",
+    "noTasks": "No hay tareas programadas.",
+    "options": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "En espera",
+      "overdue": "Atrasadas",
+      "all": "Todas"
+    }
   }
 }

@@ -1,9 +1,9 @@
 <ng-container *ngIf="totalCount() > 0; else emptyTpl">
   <section class="toolbar">
     <label>
-      Estado:
+      {{'taskLeader.state'|translate }}
       <select [(ngModel)]="filter" (ngModelChange)="load()">
-        <option *ngFor="let s of statusOptions" [ngValue]="s">{{ labelFor(s) }}</option>
+        <option *ngFor="let s of statusOptions" [ngValue]="s">{{ labelFor(s) | translate}}</option>
       </select>
     </label>
   </section>
@@ -20,7 +20,7 @@
 <ng-template #emptyTpl>
   <section class="empty">
     <div class="empty-card">
-      <div>No hay tareas<br>programadas</div>
+      <div>{{'taskLeader.noTasks'|translate }}</div>
     </div>
   </section>
 </ng-template>
