@@ -244,5 +244,39 @@
     "1": "You are about to accept:",
     "2": "into the group, are you sure you want to proceed?"
   },
-  "noInvitations": "You have no pending invitations."
+  "noInvitations": "You have no pending invitations.",
+  "myGroupMember": {
+    "groupTitle": "Group",
+    "membersTitle": "Members",
+    "noMembers": "Your group has no members. Share the code with your teammates so they can join the group."
+  },
+  "membersLeader": {
+    "title": "Members",
+    "noMembers": "No members to display.",
+    "noTasks": "No tasks"
+  },
+  "createGroup": {
+    "title": "Create Group",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "placeholder": "Enter group name",
+        "required": "Group name is required"
+      },
+      "description": {
+        "label": "Group Description",
+        "placeholder": "Enter group description",
+        "required": "Description is required"
+      },
+      "imgUrl": {
+        "label": "Group Image URL",
+        "placeholder": "Enter image URL",
+        "required": "Image URL is required",
+        "invalid": "URL must be a valid image (.jpg, .jpeg, .png, .gif, .webp, .svg)"
+      }
+    },
+    "actions": {
+      "save": "Save Changes"
+    }
+  }
 }

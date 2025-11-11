@@ -244,5 +244,39 @@
     "1": "Estas por aceptar a:",
     "2": "al grupo, ¿Estás seguro que deseas aceptar la invitación?"
   },
-  "noInvitations": "No tienes invitaciones pendientes."
+  "noInvitations": "No tienes invitaciones pendientes.",
+  "myGroupMember": {
+    "groupTitle": "Grupo",
+    "membersTitle": "Miembros",
+    "noMembers": "Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo"
+  },
+  "membersLeader": {
+    "title": "Integrantes",
+    "noMembers": "No hay integrantes para mostrar.",
+    "noTasks": "Sin tareas"
+  },
+  "createGroup": {
+    "title": "Crear Grupo",
+    "fields": {
+      "name": {
+        "label": "Nombre del Grupo",
+        "placeholder": "Nombre Grupo",
+        "required": "El nombre del grupo es requerido"
+      },
+      "description": {
+        "label": "Descripción del grupo",
+        "placeholder": "Descripción Grupo",
+        "required": "La descripción es requerida"
+      },
+      "imgUrl": {
+        "label": "Url de la imagen de grupo",
+        "placeholder": "Url Imagen Grupo",
+        "required": "El url de la imagen es requerida",
+        "invalid": "El url debe ser una imagen válida (.jpg, .jpeg, .png, .gif, .webp, .svg)"
+      }
+    },
+    "actions": {
+      "save": "Guardar Cambios"
+    }
+  }
 }
