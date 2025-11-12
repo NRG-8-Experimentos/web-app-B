@@ -19,7 +19,7 @@
 
     <div class="divider"></div>
 
-    <div class="desc">{{ task.description || 'Sin descripción' }}</div>
+    <div class="desc">{{ task.description || ( 'viewTask.noDescription' | translate ) }}</div>
 
     <div class="meta">
       <div class="progress">
@@ -31,11 +31,11 @@
     </div>
 
     <footer class="actions">
-      <button class="btn btn--back" (click)="back()">Volver</button>
+      <button class="btn btn--back" (click)="back()">{{'viewTask.return'|translate}}</button>
     </footer>
   </article>
 </section>
 
 <ng-template #loadingTpl>
-  <div class="loading">Cargando…</div>
+  <div class="loading">{{'viewTask.loading'|translate}}</div>
 </ng-template>

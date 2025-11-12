@@ -21,7 +21,7 @@
 
   <p class="desc" *ngIf="task.description; else noDesc">{{ task.description }}</p>
   <ng-template #noDesc>
-    <p class="desc desc--empty">Sin descripción</p>
+    <p class="desc desc--empty">{{'leaderTaskItem.noDescription'|translate}}</p>
   </ng-template>
 
   <div class="meta">
@@ -29,7 +29,7 @@
       <div class="bar" [ngClass]="progressClass"></div>
     </div>
     <small class="muted" *ngIf="task.dueDate">
-      Vence: {{ task.dueDate | date:'mediumDate':'UTC' }}
+      {{'leaderTaskItem.dueDate'|translate}} {{ task.dueDate | date:'mediumDate':'UTC' }}
     </small>
   </div>
 
@@ -38,14 +38,14 @@
       <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon">
         <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm14.71-9.04c.39-.39.39-1.02 0-1.41l-2.5-2.5a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.99-1.67z"/>
       </svg>
-      Editar
+      {{'leaderTaskItem.edit'|translate}}
     </button>
 
     <button type="button" class="btn btn--danger" (click)="confirmRemove($event)">
       <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon">
         <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z"/>
       </svg>
-      Borrar
+      {{'leaderTaskItem.delete'|translate}}
     </button>
   </footer>
 </article>

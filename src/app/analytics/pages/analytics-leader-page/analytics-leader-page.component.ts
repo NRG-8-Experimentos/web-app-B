@@ -6,12 +6,13 @@ import { LeaderAnalyticsResource } from '../../models/analytics-leader.entity';
 import {AnalyticsLeaderComponent} from '../../components/analytics-leader/analytics-leader.component';
 import { MemberApiService } from '../../services/member-api.service';
 import { TaksApiService } from '../../services/taks-api.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-analytics-leader-page-page',
   templateUrl: './analytics-leader-page.component.html',
   styleUrls: ['./analytics-leader-page.component.css'],
-  imports: [CommonModule, AnalyticsLeaderComponent]
+  imports: [CommonModule, AnalyticsLeaderComponent, TranslatePipe]
 })
 export class AnalyticsLeaderPageComponent implements OnInit {
   loading: boolean = true;

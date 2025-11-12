@@ -1,0 +1,388 @@
+{
+  "login": {
+    "title": "Welcome to Synhub",
+    "username": {
+      "label": "Username",
+      "placeholder": "Enter your username",
+      "required": "Username is required"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "required": "Password is required"
+    },
+    "button": {
+      "sign_in": "Login",
+      "sign_up": "Sign Up"
+    },
+    "captcha": {
+      "required": "Captcha is required"
+    }
+  },
+  "signup": {
+    "title": "Register",
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter your name",
+      "required": "Name is required"
+    },
+    "surname": {
+      "label": "Surname",
+      "placeholder": "Enter your surname",
+      "required": "Surname is required"
+    },
+    "username": {
+      "label": "Username",
+      "placeholder": "Enter your username",
+      "required": "Username is required"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "required": "Email is required",
+      "invalid": "Enter a valid email address"
+    },
+    "imgUrl": {
+      "label": "Profile image URL",
+      "placeholder": "Enter profile image URL",
+      "required": "Profile image URL is required"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "required": "Password is required"
+    },
+    "confirmPassword": {
+      "label": "Confirm password",
+      "placeholder": "Confirm your password",
+      "required": "Password confirmation is required"
+    },
+    "role": {
+      "label": "Role",
+      "options": {
+        "leader": "Leader",
+        "member": "Member"
+      }
+    },
+    "captcha": {
+      "required": "Please complete the reCAPTCHA."
+    },
+    "buttons": {
+      "register": "Register"
+    },
+    "validation": {
+      "passwordMismatch": "Passwords do not match",
+      "generic": "An error occurred. Please try again."
+    }
+  },
+  "menu": {
+    "logout": "Logout",
+    "leaders": {
+      "myGroup": "My Group",
+      "members": "Members",
+      "invitations": "Invitations",
+      "tasks": "Tasks",
+      "analytics": "Reports",
+      "requests": "Requests & Validations"
+    },
+    "members": {
+      "myGroup": "My Group",
+      "tasks": "Tasks",
+      "requests": "Requests & Validations",
+      "analytics": "My Performance"
+    }
+  },
+  "mainLeader": {
+    "title": "Metrics Dashboard",
+    "subtitle": "Group executive summary",
+    "metrics": {
+      "completed": "Completed",
+      "done": "Done",
+      "inProgress": "In progress",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    },
+    "members": {
+      "title": "Group members:",
+      "noMembers": "There are no members in the group."
+    }
+  },
+  "mainMember": {
+    "title": "Metrics Dashboard",
+    "subtitle": "Compact summary of your activity",
+    "metrics": {
+      "completed": "Completed",
+      "done": "Done",
+      "inProgress": "In progress",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    }
+  },
+  "viewTask": {
+    "return": "Return",
+    "loading": "Loading task details...",
+    "noDescription": "No description available."
+  },
+  "taskMember": {
+    "state": "State:",
+    "noTasks": "No tasks assigned.",
+    "options": {
+      "completed": "Completed",
+      "done": "Done",
+      "inProgress": "In progress",
+      "pending": "On hold",
+      "overdue": "Overdue",
+      "all": "All"
+    }
+  },
+  "taskLeader": {
+    "state": "State:",
+    "noTasks": "No tasks programed.",
+    "options": {
+      "completed": "Completed",
+      "done": "Done",
+      "inProgress": "In progress",
+      "pending": "On hold",
+      "overdue": "Overdue",
+      "all": "All"
+    }
+  },
+  "editTask": {
+    "editTask": "Edit Task",
+    "loading": "Loading...",
+    "title": "Title",
+    "description": "Description",
+    "assignTo": "Assign to",
+    "wAssign": "Without assign",
+    "dueDate": "Due date",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "createTask": {
+    "title": "Create task",
+    "fields": {
+      "title": {
+        "placeholder": "Title"
+      },
+      "description": {
+        "placeholder": "Description"
+      },
+      "assignee": {
+        "label": "Assign to",
+        "none": "Select a member"
+      },
+      "dueDate": {
+        "label": "Due date"
+      }
+    },
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "commentTask": {
+    "title": "Task comments",
+    "status": "Status",
+    "noDescription": "No description available.",
+    "dueDate": "Due date",
+    "remainingTime": "Time remaining",
+    "commentPlaceholder": "Comment:",
+    "send": "Send comment",
+    "cancel": "Cancel",
+    "loading": "Loading…"
+  },
+  "memberTaskItem": {
+    "noDescription": "No description available.",
+    "dueDate": "Due date:",
+    "remainingTime": "Time remaining:",
+    "sendComment": "Send a comment",
+    "markDone": "Mark as completed"
+  },
+  "leaderTaskItem": {
+    "noDescription": "No description available.",
+    "dueDate": "Due date:",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "deleteTaskMessage": "Delete Task",
+  "confirmDelete": "Are you sure you want to delete this task",
+  "validationPage": {
+    "comment": "Comment:",
+    "developmentTime": "Development time",
+    "assignedDevelopmentTime": "Assigned development time",
+    "reprogram": "Reschedule",
+    "markCompleted": "Mark as completed",
+    "deny": "Deny"
+  },
+  "requestsMember": {
+    "title": "Requests",
+    "filterLabel": "Status:",
+    "options": {
+      "all": "All",
+      "pending": "Pending",
+      "approved": "Approved"
+    },
+    "noRequests": "No requests pending."
+  },
+  "invitationMember": {
+    "activeInvitationTitle": "You have an active invitation to join the group",
+    "description": "Description:",
+    "memberCount": "Member count:",
+    "code": "Code:",
+    "reviewRequest": "Review request status",
+    "cancelRequest": "Cancel request",
+    "joinTitle": "Join a group",
+    "searchLabel": "Search group",
+    "searchPlaceholder": "Search group",
+    "searchButton": "Search Group",
+    "noGroupFound": "Search for a group by its unique code, ask the group leader or a team member.",
+    "requestJoin": "Request to join"
+  },
+  "accept": "Accept",
+  "reject": "Reject",
+  "invitationDialog": {
+    "1": "You are about to accept:",
+    "2": "into the group, are you sure you want to proceed?"
+  },
+  "noInvitations": "You have no pending invitations.",
+  "myGroupMember": {
+    "groupTitle": "Group",
+    "membersTitle": "Members",
+    "noMembers": "Your group has no members. Share the code with your teammates so they can join the group."
+  },
+  "membersLeader": {
+    "title": "Members",
+    "noMembers": "No members to display.",
+    "noTasks": "No tasks"
+  },
+  "createGroup": {
+    "title": "Create Group",
+    "fields": {
+      "name": {
+        "label": "Group Name",
+        "placeholder": "Enter group name",
+        "required": "Group name is required"
+      },
+      "description": {
+        "label": "Group Description",
+        "placeholder": "Enter group description",
+        "required": "Description is required"
+      },
+      "imgUrl": {
+        "label": "Group Image URL",
+        "placeholder": "Enter image URL",
+        "required": "Image URL is required",
+        "invalid": "URL must be a valid image (.jpg, .jpeg, .png, .gif, .webp, .svg)"
+      }
+    },
+    "actions": {
+      "save": "Save Changes"
+    }
+  },
+  "taskMemberDetails": {
+    "filterLabel": "State:",
+    "options": {
+      "all": "All",
+      "IN_PROGRESS": "In progress",
+      "COMPLETED": "Completed",
+      "EXPIRED": "Expired",
+      "ON_HOLD": "On hold",
+      "DONE": "Done"
+    },
+    "dueDate": "Due date:",
+    "noTasks": "No tasks to display for this member."
+  },
+  "noGroupMemberDisplay": {
+    "noGroup": "You don't have a group yet",
+    "searchButton": "Search Group"
+  },
+  "noGroupDisplay": {
+    "noGroup": "You haven't created your group yet",
+    "createButton": "Create Group"
+  },
+  "groupDisplay": {
+    "groupTitle": "Group",
+    "membersTitle": "Members",
+    "codeLabel": "Code",
+    "deleteMemberTitle": "Delete Member",
+    "deleteMemberDescription": "Are you sure you want to delete {memberName} from the group?",
+    "noMembers": "Your group has no members. Share the code with your teammates so they can join the group."
+  },
+  "analyticsMember": {
+    "overview": {
+      "title": "General Summary",
+      "label": "Task status",
+      "metrics": {
+        "completed": "Completed",
+        "done": "Done",
+        "inProgress": "In progress",
+        "pending": "Pending",
+        "overdue": "Overdue"
+      }
+    },
+    "taskDistribution": {
+      "title": "Task Distribution",
+      "label": "List and total",
+      "loading": "Loading tasks...",
+      "noTasks": "No tasks assigned.",
+      "total": "Total",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "rescheduled": {
+      "title": "Total Rescheduled Count",
+      "label": "Rescheduled",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "avgCompletion": {
+      "title": "Average Completion Time",
+      "label": "Average duration"
+    },
+    "inProgress": {
+      "title": "In Progress Tasks Time",
+      "label": "Individual and total duration",
+      "noTasks": "No tasks in progress.",
+      "total": "Total:"
+    }
+  },
+  "analyticsLeader": {
+    "overview": {
+      "title": "General Summary",
+      "label": "Task status",
+      "metrics": {
+        "completed": "Completed",
+        "done": "Done",
+        "inProgress": "In progress",
+        "pending": "Pending",
+        "overdue": "Overdue"
+      },
+      "allMembers": "All members:"
+    },
+    "taskDistribution": {
+      "title": "Task Distribution",
+      "label": "List and total",
+      "noTasks": "Not available",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "rescheduled": {
+      "title": "Total Rescheduled Count",
+      "label": "Rescheduled",
+      "membersTitle": "Members with rescheduled tasks:",
+      "noMembers": "Not available",
+      "task": "task",
+      "tasks": "tasks"
+    },
+    "avgCompletion": {
+      "title": "Average Completion Time",
+      "label": "Average duration",
+      "noTime": "No time recorded"
+    },
+    "inProgress": {
+      "title": "In Progress Tasks Time",
+      "label": "Total duration for each member",
+      "noTime": "No time recorded"
+    }
+  }
+}

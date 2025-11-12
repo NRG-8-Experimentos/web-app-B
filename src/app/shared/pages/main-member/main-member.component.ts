@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { DetailsService } from '@app/shared/services/details.service';
 import { Member } from '@app/shared/model/member.entity';
 import { TaksApiService } from '@app/analytics/services/taks-api.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-member',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './main-member.component.html',
   styleUrl: './main-member.component.css'
 })

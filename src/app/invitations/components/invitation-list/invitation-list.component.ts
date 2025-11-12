@@ -2,11 +2,13 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Invitation} from '../../model/invitation.entity';
 import {InvitationComponent} from '../invitation/invitation.component';
 import {InvitationsApiService} from '../../services/invitations-api.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitation-list',
   imports: [
-    InvitationComponent
+    InvitationComponent,
+    TranslatePipe
   ],
   templateUrl: './invitation-list.component.html',
   styleUrl: './invitation-list.component.css'

@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { Task, TaskStatus } from '../../model/task.model';
 import { TasksApiService } from '../../services/tasks-api.service';
 import {RequestApiService} from '@app/requests/services/request-api.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'member-task-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './member-task-item.html',
   styleUrls: ['./member-task-item.css']
 })

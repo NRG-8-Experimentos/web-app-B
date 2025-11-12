@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeaderAnalyticsResource } from '../../models/analytics-leader.entity';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-analytics-leader',
   templateUrl: './analytics-leader.component.html',
   styleUrls: ['./analytics-leader.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, TranslatePipe]
 })
 export class AnalyticsLeaderComponent {
   @Input() analytics!: LeaderAnalyticsResource;

@@ -1,14 +1,14 @@
 <div>
   <div>
-    <p style="font-size: 24px; font-weight: bold;">Solicitudes</p>
+    <p style="font-size: 24px; font-weight: bold;">{{ 'requestsMember.title' | translate }}</p>
   </div>
   <div style="height: 16px;"></div>
   <section class="toolbar">
     <label>
-      Estado:
+      {{ 'requestsMember.filterLabel' | translate }}
       <select [(ngModel)]="selectedFilter" (ngModelChange)="onFilterChange($event)">
         <option *ngFor="let s of statusOptions" [ngValue]="s">
-          {{ s === 'ALL' ? 'todas' : (s === 'PENDING' ? 'pendientes' : 'aprobadas') }}
+          {{ 'requestsMember.options.' + (s | lowercase) | translate }}
         </option>
       </select>
     </label>

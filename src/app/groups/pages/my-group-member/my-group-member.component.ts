@@ -9,12 +9,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MemberGroupService} from '@app/groups/services/member-group.service';
 import {MemberGroup} from '@app/groups/model/member-group.entity';
 import {ShortMember} from '@app/shared/model/short-member.entity';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-group-member',
   imports: [MatIconModule,
     ProfileImageDisplayComponent,
-    NoGroupMemberDisplayComponent],
+    NoGroupMemberDisplayComponent, TranslatePipe],
   templateUrl: './my-group-member.component.html',
   styleUrl: './my-group-member.component.css'
 })

@@ -2,11 +2,13 @@ import {Component, Input} from '@angular/core';
 import {Request} from '@app/requests/model/request.entity';
 import {NgStyle} from '@angular/common';
 import {Router} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-request-card',
   imports: [
-    NgStyle
+    NgStyle,
+    TranslatePipe
   ],
   templateUrl: './request-card.component.html',
   styleUrl: './request-card.component.css'

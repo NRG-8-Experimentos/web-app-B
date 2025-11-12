@@ -10,6 +10,7 @@ import {GroupService} from '@app/groups/services/group.service';
 import {ShortMember} from '@app/shared/model/short-member.entity';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-dialog/confirmation-dialog.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 
 @Component({
@@ -17,7 +18,8 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
   imports: [
     NoGroupDisplayComponent,
     ProfileImageDisplayComponent,
-    MatIconModule
+    MatIconModule,
+    TranslatePipe
   ],
   template: `
     <div class="w-full h-full">
@@ -29,7 +31,7 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
         @if (hasGroup){
           <div class="w-full h-full grid grid-cols-2 gap-16 min-h-0">
             <div class="w-full h-full flex flex-col gap-7">
-              <h2 class="text-2xl font-bold">Grupo</h2>
+              <h2 class="text-2xl font-bold">{{ 'groupDisplay.groupTitle' | translate }}</h2>
 
               <app-profile-image-display [groupName]="group.name" alt="Imagen del grupo" [imgSrc]="group.imgUrl"/>
 
@@ -49,7 +51,7 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
               </div>
             </div>
             <div class="h-full flex flex-col gap-7 min-h-0">
-              <h2 class="text-2xl font-bold">Miembros</h2>
+              <h2 class="text-2xl font-bold">{{ 'groupDisplay.membersTitle' | translate }}</h2>
               @if (hasMembers) {
                 <div class="flex-1  rounded-3xl bg-[#F4F4F4] p-8 text-black text-center text-xl min-h-0">
                   <div class="bg-white rounded-2xl h-full">
@@ -75,13 +77,13 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
                 </div>
               } @else {
                 <div class="flex-1 w-full h-full rounded-3xl bg-[#1A4E85] p-8 text-white text-center text-xl ">
-                  Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo
+                  {{ 'groupDisplay.noMembers' | translate }}
                 </div>
               }
             </div>
           </div>
         } @else {
-          <h2 class="text-2xl font-bold">Grupo</h2>
+          <h2 class="text-2xl font-bold">{{ 'groupDisplay.groupTitle' | translate }}</h2>
           <app-no-group-display/>
         }
       }

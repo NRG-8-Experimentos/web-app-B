@@ -2,7 +2,7 @@
   @if(activeInvitation){
     <div class="invitation-active-container">
       <div style="font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">
-        <p>¡Tienes una invitación activa para unirte al grupo <strong>"{{activeInvitation.group.name}}"</strong></p>
+        <p>{{ 'invitationMember.activeInvitationTitle' | translate }} <strong>"{{activeInvitation.group.name}}"</strong></p>
       </div>
       <div class="group-container-found">
         <div class="group-found-header">
@@ -11,17 +11,17 @@
         </div>
         <div style="border-top: 2px solid #fff; width: 100%;"></div>
         <div class="group-found-body">
-          <p>Descripción: {{
+          <p>{{ 'invitationMember.description' | translate }} {{
               activeInvitation.group.description.length > 500
                 ? (activeInvitation.group.description.slice(0, 500) + '...')
                 : activeInvitation.group.description
             }}</p>
-          <p>Cantidad de miembros: {{activeInvitation.group.memberCount}}</p>
-          <p>Código: {{activeInvitation.group.code}}</p>
+          <p>{{ 'invitationMember.memberCount' | translate }} {{activeInvitation.group.memberCount}}</p>
+          <p>{{ 'invitationMember.code' | translate }} {{activeInvitation.group.code}}</p>
         </div>
         <div class="group-found-button-container">
-          <button class="accept-button" (click)="onCheckInvitation()">Revisar estado de la solicitud</button>
-          <button class="decline-button" (click)="onCancelInvitation()">Cancelar solicitud</button>
+          <button class="accept-button" (click)="onCheckInvitation()">{{ 'invitationMember.reviewRequest' | translate }}</button>
+          <button class="decline-button" (click)="onCancelInvitation()">{{ 'invitationMember.cancelRequest' | translate }}</button>
         </div>
       </div>
     </div>
@@ -29,15 +29,15 @@
   @if (activeInvitation == null) {
     <div class="search-container">
       <div class="search-title">
-        <p>Únete a un grupo</p>
+        <p>{{ 'invitationMember.joinTitle' | translate }}</p>
       </div>
       <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-bar-form">
         <mat-form-field appearance="fill" class="custom-form-field full-width">
-          <mat-label>Buscar grupo</mat-label>
+          <mat-label>{{ 'invitationMember.searchLabel' | translate }}</mat-label>
           <mat-icon matPrefix style="color: #888;">search</mat-icon>
-          <input matInput placeholder="Buscar grupo" type="text" formControlName="query">
+          <input matInput placeholder="{{ 'invitationMember.searchLabel' | translate }}" type="text" formControlName="query">
         </mat-form-field>
-        <button class="search-button" type="submit">Buscar Grupo</button>
+        <button class="search-button" type="submit">{{ 'invitationMember.searchLabel' | translate }}</button>
       </form>
       @if (searchError) {
         <div class="group-container-error">
@@ -47,7 +47,7 @@
     </div>
     @if (!groupFound){
       <div class="group-container-no-group">
-        <p>Busca un grupo por su código único, solicitalo al líder de grupo o a uno de los miembros del equipo.</p>
+        <p>{{ 'invitationMember.noGroupFound' | translate }}</p>
       </div>
     }
     @if (groupFound){
@@ -58,16 +58,16 @@
         </div>
         <div style="border-top: 2px solid #fff; width: 100%;"></div>
         <div class="group-found-body">
-          <p>Descripción: {{
+          <p>{{ 'invitationMember.description' | translate }} {{
               groupFound.description.length > 500
                 ? (groupFound.description.slice(0, 500) + '...')
                 : groupFound.description
             }}</p>
-          <p>Cantidad de miembros: {{groupFound.memberCount}}</p>
-          <p>Código: {{groupFound.code}}</p>
+          <p>{{ 'invitationMember.memberCount' | translate }} {{groupFound.memberCount}}</p>
+          <p>{{ 'invitationMember.code' | translate }} {{groupFound.code}}</p>
         </div>
         <div class="group-found-button-container">
-          <button class="join-button" (click)="onJoinGroup()">Solicitar unirse</button>
+          <button class="join-button" (click)="onJoinGroup()">{{ 'invitationMember.requestJoin' | translate }}</button>
         </div>
       </div>
     }

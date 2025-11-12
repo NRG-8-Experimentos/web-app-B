@@ -1,29 +1,29 @@
 <div class="metrics-summary-card">
   <div class="dashboard-summary-section" *ngIf="!loadingMetrics">
     <div class="dashboard-header">
-      <span class="dashboard-title">Dashboard de métricas</span>
-      <span class="dashboard-subtitle">Resumen resumido de tu actividad</span>
+      <span class="dashboard-title">{{'mainMember.title'|translate}}</span>
+      <span class="dashboard-subtitle">{{'mainMember.subtitle'|translate}}</span>
     </div>
     <div class="dashboard-metrics-row">
       <div class="dashboard-metric-card green">
         <span class="material-icons dashboard-metric-icon">check_circle</span>
         <div>
           <div class="dashboard-metric-value">{{ overview.completed ?? 0 }}</div>
-          <div class="dashboard-metric-label">Completadas</div>
+          <div class="dashboard-metric-label">{{'mainMember.metrics.completed'|translate}}</div>
         </div>
       </div>
       <div class="dashboard-metric-card teal">
         <span class="material-icons dashboard-metric-icon">done_all</span>
         <div>
           <div class="dashboard-metric-value">{{ overview.done ?? 0 }}</div>
-          <div class="dashboard-metric-label">Terminadas</div>
+          <div class="dashboard-metric-label">{{'mainMember.metrics.done'|translate}}</div>
         </div>
       </div>
       <div class="dashboard-metric-card blue">
         <span class="material-icons dashboard-metric-icon">autorenew</span>
         <div>
           <div class="dashboard-metric-value">{{ overview.inProgress ?? 0 }}</div>
-          <div class="dashboard-metric-label">En progreso</div>
+          <div class="dashboard-metric-label">{{'mainMember.metrics.inProgress'|translate}}</div>
         </div>
       </div>
     </div>
@@ -32,14 +32,14 @@
         <span class="material-icons dashboard-metric-icon">pause_circle_filled</span>
         <div>
           <div class="dashboard-metric-value">{{ overview.pending ?? 0 }}</div>
-          <div class="dashboard-metric-label">Pendientes</div>
+          <div class="dashboard-metric-label">{{'mainMember.metrics.pending'|translate}}</div>
         </div>
       </div>
       <div class="dashboard-metric-card red">
         <span class="material-icons dashboard-metric-icon">error</span>
         <div>
           <div class="dashboard-metric-value">{{ overview.overdue ?? 0 }}</div>
-          <div class="dashboard-metric-label">Atrasadas</div>
+          <div class="dashboard-metric-label">{{'mainMember.metrics.overdue'|translate}}</div>
         </div>
       </div>
     </div>

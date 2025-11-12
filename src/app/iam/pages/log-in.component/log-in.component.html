@@ -6,28 +6,29 @@
         <p style="font-size: 40px; font-weight: bold;">hub</p>
       </div>
       <img src="assets/images/synhub_logo.png" alt="Synhub Logo" class="synhub-logo">
+      <app-language-switcher></app-language-switcher>
     </div>
     <div class="login-form">
       <div class = "form">
         <div style="display: flex; justify-content: center;">
-          <p style="font-size: 40px; font-weight: bold;">Bienvenido a Synhub</p>
+          <p style="font-size: 40px; font-weight: bold;">{{'login.title'|translate}}</p>
         </div>
         <div style="height: 40px;"></div>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="fill" class="custom-form-field full-width">
-            <mat-label>Usuario</mat-label>
+            <mat-label>{{'login.username.label'|translate}}</mat-label>
             <mat-icon matPrefix style="color: #888;">person</mat-icon>
-            <input matInput formControlName="username" placeholder="Usuario" type="text" required>
+            <input matInput formControlName="username" placeholder="{{'login.username.placeholder'|translate}}" type="text" required>
             <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
-              El usuario es <strong>requerido</strong>
+              {{'login.username.required'|translate}}
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill" class="custom-form-field full-width">
-            <mat-label>Contraseña</mat-label>
+            <mat-label>{{'login.password.label'|translate}}</mat-label>
             <mat-icon matPrefix style="color: #888;">lock</mat-icon>
-            <input matInput formControlName="password" placeholder="Contraseña" type="password" required>
+            <input matInput formControlName="password" placeholder="{{'login.password.placeholder'|translate}}" type="password" required>
             <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-              La contraseña es <strong>requerida</strong>
+              {{'login.password.required'|translate}}
             </mat-error>
           </mat-form-field>
           <!-- ngx-captcha reCAPTCHA v2 -->
@@ -41,12 +42,12 @@
               formControlName="recaptcha">
             </ngx-recaptcha2>
             <div *ngIf="loginForm.get('recaptcha')?.invalid && loginForm.get('recaptcha')?.touched" style="color: #d32f2f; font-size: 12px; margin-top: 8px; text-align: center;">
-              Por favor, completa el reCAPTCHA.
+              {{'login.captcha.required'|translate}}
             </div>
           </div>
           <div class="button-container">
-            <button mat-raised-button color="primary" class="custom-button-1" type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
-            <button mat-raised-button color="primary" class="custom-button-2" type="button" (click)="onGotoSignUp()">Registrarse</button>
+            <button mat-raised-button color="primary" class="custom-button-1" type="submit" [disabled]="loginForm.invalid">{{'login.button.sign_in'|translate}}</button>
+            <button mat-raised-button color="primary" class="custom-button-2" type="button" (click)="onGotoSignUp()">{{'login.button.sign_up'|translate}}</button>
           </div>
         </form>
       </div>

@@ -5,11 +5,12 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Task, TaskStatus } from '../../model/task.model';
 import { TasksApiService } from '../../services/tasks-api.service';
 import { ConfirmDeleteDialogComponent } from '../confirm-delete-dialog/confirm-delete-dialog';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'leader-task-item',
   standalone: true,
-  imports: [CommonModule, MatDialogModule],
+  imports: [CommonModule, MatDialogModule, TranslatePipe],
   templateUrl: './leader-task-item.html',
   styleUrls: ['./leader-task-item.css']
 })
@@ -42,8 +43,7 @@ export class LeaderTaskItemComponent {
     if (!this.canModify) return;
     const ref = this.dialog.open(ConfirmDeleteDialogComponent, {
       data: {
-        title: 'Eliminar tarea',
-        message: `Esta seguro(a) que quieres eliminar la tarea "${this.task.title}"?`
+        message: `"${this.task.title}"?`
       }
     });
     ref.afterClosed().subscribe(yes => {

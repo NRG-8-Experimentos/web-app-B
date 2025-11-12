@@ -3,10 +3,13 @@ import {DetailsService} from '../../../shared/services/details.service';
 import {Invitation} from '../../model/invitation.entity';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Router} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitation-dialog',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './invitation-dialog.component.html',
   styleUrl: './invitation-dialog.component.css'
 })

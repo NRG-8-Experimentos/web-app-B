@@ -1,0 +1,388 @@
+{
+  "login": {
+    "title": "Bienvenido a Synhub",
+    "username": {
+      "label": "Usuario",
+      "placeholder": "Ingresa tu usuario",
+      "required": "Se requiere el usuario"
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Ingresa tu contraseña",
+      "required": "Se requiere la contraseña"
+    },
+    "button": {
+      "sign_in": "Iniciar Sesión",
+      "sign_up": "Registrarse"
+    },
+    "captcha": {
+      "required": "Se requiere el Captcha"
+    }
+  },
+  "signup": {
+    "title": "Registro",
+    "name": {
+      "label": "Nombre",
+      "placeholder": "Nombre",
+      "required": "El nombre es requerido"
+    },
+    "surname": {
+      "label": "Apellido",
+      "placeholder": "Apellido",
+      "required": "El apellido es requerido"
+    },
+    "username": {
+      "label": "Usuario",
+      "placeholder": "Usuario",
+      "required": "El nombre de usuario es requerido"
+    },
+    "email": {
+      "label": "Correo Electrónico",
+      "placeholder": "Correo Electrónico",
+      "required": "El correo electrónico es requerido",
+      "invalid": "Introduce una dirección de correo válida"
+    },
+    "imgUrl": {
+      "label": "Url de foto de perfil",
+      "placeholder": "Url de foto de perfil",
+      "required": "El enlace a la foto de perfil es requerido"
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Contraseña",
+      "required": "La contraseña es requerida"
+    },
+    "confirmPassword": {
+      "label": "Confirmar contraseña",
+      "placeholder": "Confirmar contraseña",
+      "required": "La confirmación de contraseña es requerida"
+    },
+    "role": {
+      "label": "Rol",
+      "options": {
+        "leader": "Líder",
+        "member": "Miembro"
+      }
+    },
+    "captcha": {
+      "required": "Por favor, completa el reCAPTCHA."
+    },
+    "buttons": {
+      "register": "Registrarse"
+    },
+    "validation": {
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "generic": "Ocurrió un error. Intenta nuevamente."
+    }
+  },
+  "menu": {
+    "logout": "Cerrar Sesión",
+    "leaders": {
+      "myGroup": "Mi Grupo",
+      "members": "Integrantes",
+      "invitations": "Invitaciones",
+      "tasks": "Tareas",
+      "analytics": "Reportes",
+      "requests": "Solicitudes y Validaciones"
+    },
+    "members": {
+      "myGroup": "Mi Grupo",
+      "tasks": "Tareas",
+      "requests": "Solicitudes y Validaciones",
+      "analytics": "Mi desempeño"
+    }
+  },
+  "mainLeader": {
+    "title": "Dashboard de métricas",
+    "subtitle": "Resumen ejecutivo del grupo",
+    "metrics": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "Pendientes",
+      "overdue": "Atrasadas"
+    },
+    "members": {
+      "title": "Integrantes del grupo:",
+      "noMembers": "No hay integrantes en el grupo."
+    }
+  },
+  "mainMember": {
+    "title": "Dashboard de métricas",
+    "subtitle": "Resumen resumido de tu actividad",
+    "metrics": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "Pendientes",
+      "overdue": "Atrasadas"
+    }
+  },
+  "viewTask": {
+    "return": "Volver",
+    "loading": "Cargando detalles de la tarea...",
+    "noDescription": "No hay descripción disponible."
+  },
+  "taskMember": {
+    "state": "Estado:",
+    "noTasks": "No hay tareas asignadas.",
+    "options": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "En espera",
+      "overdue": "Atrasadas",
+      "all": "Todas"
+    }
+  },
+  "taskLeader": {
+    "state": "Estado:",
+    "noTasks": "No hay tareas programadas.",
+    "options": {
+      "completed": "Completadas",
+      "done": "Terminadas",
+      "inProgress": "En progreso",
+      "pending": "En espera",
+      "overdue": "Atrasadas",
+      "all": "Todas"
+    }
+  },
+  "editTask": {
+    "editTask": "Editar Tarea",
+    "loading": "Cargando...",
+    "title": "Título",
+    "description": "Descripción",
+    "assignTo": "Asignar a",
+    "wAssign": "Sin asignar",
+    "dueDate": "Fecha de vencimiento",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "createTask": {
+    "title": "Crear tarea",
+    "fields": {
+      "title": {
+        "placeholder": "Título"
+      },
+      "description": {
+        "placeholder": "Descripción"
+      },
+      "assignee": {
+        "label": "Asignar a",
+        "none": "Selecciona un miembro"
+      },
+      "dueDate": {
+        "label": "Vencimiento"
+      }
+    },
+    "actions": {
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    }
+  },
+  "commentTask": {
+    "title": "Comentarios de la tarea",
+    "status": "Estado",
+    "noDescription": "Sin descripción",
+    "dueDate": "Fecha de entrega",
+    "remainingTime": "Tiempo restante",
+    "commentPlaceholder": "Comentario:",
+    "send": "Enviar comentario",
+    "cancel": "Cancelar",
+    "loading": "Cargando…"
+  },
+  "memberTaskItem": {
+    "noDescription": "Sin descripción",
+    "dueDate": "Fecha de entrega:",
+    "remainingTime": "Tiempo restante:",
+    "sendComment": "Enviar un comentario",
+    "markDone": "Marcar como completada"
+  },
+  "leaderTaskItem": {
+    "noDescription": "Sin descripción",
+    "dueDate": "Vence:",
+    "edit": "Editar",
+    "delete": "Borrar"
+  },
+  "deleteTaskMessage": "Borrar Tarea",
+  "confirmDelete": "¿Estás seguro(a) de que deseas eliminar esta tarea",
+  "validationPage": {
+    "comment": "Comentario:",
+    "developmentTime": "Tiempo de desarrollo",
+    "assignedDevelopmentTime": "Tiempo de desarrollo asignado",
+    "reprogram": "Reprogramar",
+    "markCompleted": "Marcar como completado",
+    "deny": "Denegar"
+  },
+  "requestsMember": {
+    "title": "Solicitudes",
+    "filterLabel": "Estado:",
+    "options": {
+      "all": "Todas",
+      "pending": "Pendientes",
+      "approved": "Aprobadas"
+    },
+    "noRequests": "No hay solicitudes pendientes."
+  },
+  "invitationMember": {
+    "activeInvitationTitle": "¡Tienes una invitación activa para unirte al grupo",
+    "description": "Descripción:",
+    "memberCount": "Cantidad de miembros:",
+    "code": "Código:",
+    "reviewRequest": "Revisar estado de la solicitud",
+    "cancelRequest": "Cancelar solicitud",
+    "joinTitle": "Únete a un grupo",
+    "searchLabel": "Buscar grupo",
+    "searchPlaceholder": "Buscar grupo",
+    "searchButton": "Buscar Grupo",
+    "noGroupFound": "Busca un grupo por su código único, solicítalo al líder de grupo o a uno de los miembros del equipo.",
+    "requestJoin": "Solicitar unirse"
+  },
+  "accept": "Aceptar",
+  "reject": "Rechazar",
+  "invitationDialog": {
+    "1": "Estas por aceptar a:",
+    "2": "al grupo, ¿Estás seguro que deseas aceptar la invitación?"
+  },
+  "noInvitations": "No tienes invitaciones pendientes.",
+  "myGroupMember": {
+    "groupTitle": "Grupo",
+    "membersTitle": "Miembros",
+    "noMembers": "Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo"
+  },
+  "membersLeader": {
+    "title": "Integrantes",
+    "noMembers": "No hay integrantes para mostrar.",
+    "noTasks": "Sin tareas"
+  },
+  "createGroup": {
+    "title": "Crear Grupo",
+    "fields": {
+      "name": {
+        "label": "Nombre del Grupo",
+        "placeholder": "Nombre Grupo",
+        "required": "El nombre del grupo es requerido"
+      },
+      "description": {
+        "label": "Descripción del grupo",
+        "placeholder": "Descripción Grupo",
+        "required": "La descripción es requerida"
+      },
+      "imgUrl": {
+        "label": "Url de la imagen de grupo",
+        "placeholder": "Url Imagen Grupo",
+        "required": "El url de la imagen es requerida",
+        "invalid": "El url debe ser una imagen válida (.jpg, .jpeg, .png, .gif, .webp, .svg)"
+      }
+    },
+    "actions": {
+      "save": "Guardar Cambios"
+    }
+  },
+  "taskMemberDetails": {
+    "filterLabel": "Estado:",
+    "options": {
+      "all": "Todos",
+      "IN_PROGRESS": "En progreso",
+      "COMPLETED": "Completadas",
+      "EXPIRED": "Atrasadas",
+      "ON_HOLD": "En espera",
+      "DONE": "Terminadas"
+    },
+    "dueDate": "Vence:",
+    "noTasks": "No hay tareas para mostrar para este miembro."
+  },
+  "noGroupMemberDisplay": {
+    "noGroup": "No tienes un grupo todavía",
+    "searchButton": "Buscar Grupo"
+  },
+  "noGroupDisplay": {
+    "noGroup": "No has creado tu grupo todavía",
+    "createButton": "Crear Grupo"
+  },
+  "groupDisplay": {
+    "groupTitle": "Grupo",
+    "membersTitle": "Miembros",
+    "codeLabel": "Código",
+    "deleteMemberTitle": "Eliminar integrante",
+    "deleteMemberDescription": "¿Estás seguro que deseas eliminar a {memberName} del grupo?",
+    "noMembers": "Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo"
+  },
+  "analyticsMember": {
+    "overview": {
+      "title": "Resumen General",
+      "label": "Estado de las tareas",
+      "metrics": {
+        "completed": "Completadas",
+        "done": "Terminadas",
+        "inProgress": "En progreso",
+        "pending": "Pendientes",
+        "overdue": "Atrasadas"
+      }
+    },
+    "taskDistribution": {
+      "title": "Distribución de Tareas",
+      "label": "Listado y total",
+      "loading": "Cargando tareas...",
+      "noTasks": "No hay tareas asignadas.",
+      "total": "Total",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "rescheduled": {
+      "title": "Cantidad total de reprogramaciones",
+      "label": "Reprogramadas",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "avgCompletion": {
+      "title": "Tiempo Promedio de Finalización",
+      "label": "Duración promedio"
+    },
+    "inProgress": {
+      "title": "Tiempo de Tareas en Progreso",
+      "label": "Duración individual y total",
+      "noTasks": "No hay tareas en progreso.",
+      "total": "Total:"
+    }
+  },
+  "analyticsLeader": {
+    "overview": {
+      "title": "Resumen General",
+      "label": "Estado de las tareas",
+      "metrics": {
+        "completed": "Completadas",
+        "done": "Terminadas",
+        "inProgress": "En progreso",
+        "pending": "Pendientes",
+        "overdue": "Atrasadas"
+      },
+      "allMembers": "Todos los miembros:"
+    },
+    "taskDistribution": {
+      "title": "Distribución de Tareas",
+      "label": "Listado y total",
+      "noTasks": "No disponible",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "rescheduled": {
+      "title": "Cantidad total de reprogramaciones",
+      "label": "Reprogramadas",
+      "membersTitle": "Miembros con tareas reprogramadas:",
+      "noMembers": "No disponible",
+      "task": "tarea",
+      "tasks": "tareas"
+    },
+    "avgCompletion": {
+      "title": "Tiempo Promedio de Finalización",
+      "label": "Duración promedio",
+      "noTime": "Sin tiempo registrado"
+    },
+    "inProgress": {
+      "title": "Tiempo de Tareas en Progreso",
+      "label": "Duración total de cada miembro",
+      "noTime": "Sin tiempo registrado"
+    }
+  }
+}

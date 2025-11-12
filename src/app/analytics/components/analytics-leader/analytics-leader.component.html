@@ -5,35 +5,35 @@
     <div class="metric-icon-title">
       <span class="metric-icon material-icons info">info</span>
       <div class="metric-title-label-col">
-        <div class="metric-title">Resumen General</div>
-        <div class="metric-label">Estado de las tareas</div>
+        <div class="metric-title">{{ 'analyticsLeader.overview.title' | translate }}</div>
+        <div class="metric-label">{{ 'analyticsLeader.overview.label' | translate }}</div>
       </div>
     </div>
     <div class="metrics-row">
       <div class="stat-card green">
         <div class="stat-value">{{ analytics.overview.completed ?? 0 }}</div>
-        <div class="stat-label">Completadas</div>
+        <div class="stat-label">{{ 'analyticsLeader.overview.metrics.completed' | translate }}</div>
       </div>
       <div class="stat-card teal">
         <div class="stat-value">{{ analytics.overview.done ?? 0 }}</div>
-        <div class="stat-label">Terminadas</div>
+        <div class="stat-label">{{ 'analyticsLeader.overview.metrics.done' | translate }}</div>
       </div>
       <div class="stat-card blue">
         <div class="stat-value">{{ analytics.overview.inProgress ?? 0 }}</div>
-        <div class="stat-label">En progreso</div>
+        <div class="stat-label">{{ 'analyticsLeader.overview.metrics.inProgress' | translate }}</div>
       </div>
       <div class="stat-card orange">
         <div class="stat-value">{{ analytics.overview.pending ?? 0 }}</div>
-        <div class="stat-label">Pendientes</div>
+        <div class="stat-label">{{ 'analyticsLeader.overview.metrics.pending' | translate }}</div>
       </div>
       <div class="stat-card red">
         <div class="stat-value">{{ analytics.overview.overdue ?? 0 }}</div>
-        <div class="stat-label">Atrasadas</div>
+        <div class="stat-label">{{ 'analyticsLeader.overview.metrics.overdue' | translate }}</div>
       </div>
     </div>
     <hr class="section-divider">
     <div class="members-list">
-      <span class="members-title">Todos los miembros:</span>
+      <span class="members-title">{{ 'analyticsLeader.overview.allMembers' | translate }}</span>
       <div *ngFor="let member of safeMembers" class="member-row">
         <img *ngIf="member.imgUrl" [src]="member.imgUrl" class="profile-image">
         <span class="member-name">{{ member.name }} {{ member.surname }}</span>
@@ -46,12 +46,12 @@
     <div class="metric-icon-title">
       <span class="metric-icon material-icons list_alt">list_alt</span>
       <div class="metric-title-label-col">
-        <div class="metric-title">Distribución de Tareas</div>
-        <div class="metric-label">Listado y total</div>
+        <div class="metric-title">{{ 'analyticsLeader.taskDistribution.title' | translate }}</div>
+        <div class="metric-label">{{ 'analyticsLeader.taskDistribution.label' | translate }}</div>
       </div>
     </div>
     <div *ngIf="!analytics.leaderTasks.length" class="empty-section">
-      <span>No disponible</span>
+      <span>{{ 'analyticsLeader.taskDistribution.noTasks' | translate }}</span>
     </div>
     <div *ngIf="analytics.leaderTasks.length">
       <div class="bar-chart-row" *ngFor="let task of analytics.leaderTasks">
@@ -64,7 +64,7 @@
           ></div>
         </div>
         <span class="bar-chart-value badge" style="white-space:nowrap;">
-          {{ task.taskCount }} {{ task.taskCount === 1 ? 'tarea' : 'tareas' }}
+          {{ task.taskCount }} {{ task.taskCount === 1 ? ('analyticsLeader.taskDistribution.task' | translate) : ('analyticsLeader.taskDistribution.tasks' | translate) }}
         </span>
       </div>
     </div>
@@ -75,21 +75,21 @@
     <div class="metric-icon-title">
       <span class="metric-icon material-icons build">build</span>
       <div class="metric-title-label-col">
-        <div class="metric-title">Cantidad total de reprogramaciones</div>
-        <div class="metric-label">Reprogramadas</div>
+        <div class="metric-title">{{ 'analyticsLeader.rescheduled.title' | translate }}</div>
+        <div class="metric-label">{{ 'analyticsLeader.rescheduled.label' | translate }}</div>
       </div>
       <div class="metric-value-box">
         <span class="metric-value">
           {{ analytics.rescheduled?.rescheduled ?? 0 }}
         </span>
         <span class="metric-unit">
-          {{ (analytics.rescheduled?.rescheduled ?? 0) === 1 ? 'tarea' : 'tareas' }}
+          {{ (analytics.rescheduled?.rescheduled ?? 0) === 1 ? ('analyticsLeader.rescheduled.task' | translate) : ('analyticsLeader.rescheduled.tasks' | translate) }}
         </span>
       </div>
     </div>
     <hr class="section-divider">
     <div class="members-list">
-      <span class="members-title">Miembros con tareas reprogramadas:</span>
+      <span class="members-title">{{ 'analyticsLeader.rescheduled.membersTitle' | translate }}</span>
       <div *ngIf="membersWithRescheduled.length > 0">
         <div class="bar-chart-row" *ngFor="let member of membersWithRescheduled">
           <img *ngIf="member.imgUrl" [src]="member.imgUrl" class="profile-image">
@@ -101,12 +101,12 @@
             ></div>
           </div>
           <span class="bar-chart-value badge" style="white-space:nowrap;">
-            {{ member.rescheduledCount }} {{ member.rescheduledCount === 1 ? 'tarea' : 'tareas' }}
+            {{ member.rescheduledCount }} {{ member.rescheduledCount === 1 ? ('analyticsLeader.rescheduled.task' | translate) : ('analyticsLeader.rescheduled.tasks' | translate) }}
           </span>
         </div>
       </div>
       <div *ngIf="!membersWithRescheduled.length" class="empty-section">
-        <span>No disponible</span>
+        <span>{{ 'analyticsLeader.rescheduled.noMembers' | translate }}</span>
       </div>
     </div>
   </div>
@@ -116,8 +116,8 @@
     <div class="metric-icon-title">
       <span class="metric-icon material-icons date_range">date_range</span>
       <div class="metric-title-label-col">
-        <div class="metric-title">Tiempo Promedio de Finalización</div>
-        <div class="metric-label">Duración promedio</div>
+        <div class="metric-title">{{ 'analyticsLeader.avgCompletion.title' | translate }}</div>
+        <div class="metric-label">{{ 'analyticsLeader.avgCompletion.label' | translate }}</div>
       </div>
       <div class="metric-value-box">
         <span class="metric-icon material-icons timer">timer</span>
@@ -139,7 +139,7 @@
     <div *ngIf="!avgCompletionMembers.length" class="empty-section">
       <div class="member-row two-col-member-row">
         <div class="member-info">
-          <span class="member-name">Sin tiempo registrado</span>
+          <span class="member-name">{{ 'analyticsLeader.avgCompletion.noTime' | translate }}</span>
         </div>
         <div class="member-value">
           <span class="metric-value badge member-metric-value"></span>
@@ -153,14 +153,14 @@
     <div class="metric-icon-title">
       <span class="metric-icon material-icons hourglass_top">hourglass_top</span>
       <div class="metric-title-label-col">
-        <div class="metric-title">Tiempo de Tareas en Progreso</div>
-        <div class="metric-label">Duración total de cada miembro</div>
+        <div class="metric-title">{{ 'analyticsLeader.inProgress.title' | translate }}</div>
+        <div class="metric-label">{{ 'analyticsLeader.inProgress.label' | translate }}</div>
       </div>
     </div>
     <div *ngIf="inProgressDurationsMembers.length === 0" class="empty-section">
       <div class="member-row two-col-member-row">
         <div class="member-info">
-          <span class="member-name">Sin tiempo registrado</span>
+          <span class="member-name">{{ 'analyticsLeader.inProgress.noTime' | translate }}</span>
         </div>
         <div class="member-value">
           <span class="progress-task-duration"></span>

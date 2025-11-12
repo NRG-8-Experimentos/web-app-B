@@ -6,14 +6,15 @@ import {ShortMember} from '@app/shared/model/short-member.entity';
 import {GroupService} from '@app/groups/services/group.service';
 import {Router} from '@angular/router';
 import {forkJoin} from 'rxjs';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-members-leader',
   standalone: true,
-  imports: [CommonModule, NgForOf, NgIf, MatCardModule, MatIconModule],
+  imports: [CommonModule, NgForOf, NgIf, MatCardModule, MatIconModule, TranslatePipe],
   template: `
     <div class="p-8 bg-white min-h-screen">
-      <h2 class="text-2xl font-bold mb-6">Integrantes</h2>
+      <h2 class="text-2xl font-bold mb-6">{{ 'membersLeader.title' | translate }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <mat-card
           *ngFor="let member of members; let idx = index"
@@ -39,12 +40,12 @@ import {forkJoin} from 'rxjs';
             </div>
           </ng-container>
           <ng-container *ngIf="!member.task">
-            <div class="rounded-xl shadow bg-gray-200 mt-4 mb-2 mx-3 px-4 py-4 text-gray-600 flex items-center justify-center min-h-20">Sin tareas</div>
+            <div class="rounded-xl shadow bg-gray-200 mt-4 mb-2 mx-3 px-4 py-4 text-gray-600 flex items-center justify-center min-h-20">{{ 'membersLeader.noTasks' | translate }}</div>
           </ng-container>
         </mat-card>
       </div>
       <ng-template #noMembers>
-        <p class="text-gray-700">No hay integrantes para mostrar.</p>
+        <p class="text-gray-700"> {{ 'membersLeader.noMembers' | translate }} </p>
       </ng-template>
     </div>
   `,

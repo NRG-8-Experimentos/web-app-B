@@ -24,7 +24,7 @@
             <span class="sidenav-link-icon" [innerHTML]="data.svg"></span>
           }
           @if (collapsed) {
-            <span class="sidenav-link-text" @fadeInOut>{{data.title}}</span>
+            <span class="sidenav-link-text" @fadeInOut>{{data.title | translate}}</span>
           }
         </a>
       </li>
@@ -32,6 +32,10 @@
 
   </ul>
   @if (collapsed) {
+    <div class="language-switcher-section">
+      <app-language-switcher>
+      </app-language-switcher>
+    </div>
     <div class="logout-section">
       <ul class="sidenav-nav">
         <li class="sidenav-nav-item">
@@ -42,7 +46,7 @@
             @if (LOGOUT_OPTION.svg) {
               <span class="sidenav-link-icon" [innerHTML]="LOGOUT_OPTION.svg"></span>
             }
-            <span class="sidenav-link-text" @fadeInOut>{{LOGOUT_OPTION.title}}</span>
+            <span class="sidenav-link-text" @fadeInOut>{{LOGOUT_OPTION.title | translate}}</span>
           </a>
         </li>
       </ul>

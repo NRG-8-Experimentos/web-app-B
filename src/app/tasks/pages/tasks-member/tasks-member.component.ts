@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TasksApiService, Task, TaskStatus } from '../../services/tasks-api.service';
 import { MemberTaskItemComponent } from '../../components/member-task-item/member-task-item';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tasks-member',
   standalone: true,
-  imports: [CommonModule, FormsModule, MemberTaskItemComponent],
+  imports: [CommonModule, FormsModule, MemberTaskItemComponent, TranslatePipe],
   templateUrl: './tasks-member.component.html',
   styleUrls: ['./tasks-member.component.css']
 })
@@ -29,14 +30,14 @@ export class TasksMemberComponent {
   ];
 
   private statusLabels: Record<TaskStatus, string> = {
-    [TaskStatus.IN_PROGRESS]: 'en progreso',
-    [TaskStatus.DONE]: 'terminado',
-    [TaskStatus.COMPLETED]: 'completado',
-    [TaskStatus.EXPIRED]: 'vencido',
-    [TaskStatus.ON_HOLD]: 'en espera'
+    [TaskStatus.IN_PROGRESS]: 'taskMember.options.inProgress',
+    [TaskStatus.DONE]: 'taskMember.options.done',
+    [TaskStatus.COMPLETED]: 'taskMember.options.completed',
+    [TaskStatus.EXPIRED]: 'taskMember.options.overdue',
+    [TaskStatus.ON_HOLD]: 'taskMember.options.inProgress'
   };
   labelFor(s: TaskStatus | 'ALL'): string {
-    return s === 'ALL' ? 'todos' : this.statusLabels[s];
+    return s === 'ALL' ? 'taskMember.options.all' : this.statusLabels[s];
   }
 
   filtered = computed(() => {
