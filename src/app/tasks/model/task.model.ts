@@ -23,4 +23,6 @@ export interface Task {
   updatedAt?: string;
   member?: TaskMember | null;
   groupId?: number;
+  timesRearranged?: number;
+  timePassed?: number;
 }

@@ -1,0 +1,44 @@
+<div class="kanban-board-container">
+  <div *ngIf="loading" class="loading-kanban">
+    <span class="material-icons spin">autorenew</span>
+    <p>{{ translationPrefix + '.loading' | translate }}</p>
+  </div>
+
+  <div *ngIf="!loading" class="kanban-board">
+    <div *ngFor="let column of columns" class="kanban-column">
+      <div class="column-header" [style.background-color]="column.color">
+        <span class="material-icons column-icon">{{ column.icon }}</span>
+        <h3 class="column-title">{{ column.title }}</h3>
+        <span class="task-count">{{ column.tasks.length }}</span>
+      </div>
+
+      <div class="column-content">
+        <div *ngIf="column.tasks.length === 0" class="empty-column">
+          <span class="material-icons empty-icon">inbox</span>
+          <p>{{ translationPrefix + '.noTasks' | translate }}</p>
+        </div>
+
+        <div *ngFor="let task of column.tasks" class="task-card">
+          <div class="task-header">
+            <h4 class="task-title">{{ task.title }}</h4>
+            <span class="material-icons task-menu">more_vert</span>
+          </div>
+
+          <p class="task-description">{{ task.description }}</p>
+
+          <div class="task-footer">
+            <div class="task-date">
+              <span class="material-icons date-icon">event</span>
+              <span>{{ formatDate(task.dueDate) }}</span>
+            </div>
+
+            <div class="task-rearranged" *ngIf="task.timesRearranged && task.timesRearranged > 0">
+              <span class="material-icons">sync</span>
+              <span>{{ task.timesRearranged }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

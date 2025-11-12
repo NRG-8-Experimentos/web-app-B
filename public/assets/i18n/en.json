@@ -344,6 +344,20 @@
       "label": "Individual and total duration",
       "noTasks": "No tasks in progress.",
       "total": "Total:"
+    },
+    "kanban": {
+      "title": "Kanban Board",
+      "label": "Task visualization by status",
+      "loading": "Loading board...",
+      "noTasks": "No tasks",
+      "columns": {
+        "onHold": "On Hold",
+        "inProgress": "In Progress",
+        "completed": "Completed",
+        "done": "Done",
+        "expired": "Expired"
+      },
+      "noDate": "No date"
     }
   },
   "analyticsLeader": {
@@ -383,6 +397,20 @@
       "title": "In Progress Tasks Time",
       "label": "Total duration for each member",
       "noTime": "No time recorded"
+    },
+    "kanban": {
+      "title": "Team Kanban Board",
+      "label": "Visualization of all group tasks",
+      "loading": "Loading board...",
+      "noTasks": "No tasks",
+      "columns": {
+        "onHold": "On Hold",
+        "inProgress": "In Progress",
+        "completed": "Completed",
+        "done": "Done",
+        "expired": "Expired"
+      },
+      "noDate": "No date"
     }
   }
 }
