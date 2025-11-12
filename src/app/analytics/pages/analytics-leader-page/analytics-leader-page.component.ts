@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { GroupsApiService } from '../../services/groups-api.service';
 import { AnalyticsLeaderApiService } from '../../services/analytics-leader-api.service';
 import { LeaderAnalyticsResource } from '../../models/analytics-leader.entity';
-import {AnalyticsLeaderComponent} from '../../components/analytics-leader/analytics-leader.component';
+import { AnalyticsLeaderComponent } from '../../components/analytics-leader/analytics-leader.component';
 import { MemberApiService } from '../../services/member-api.service';
 import { TaksApiService } from '../../services/taks-api.service';
-import {TranslatePipe} from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { Task } from '@app/tasks/model/task.model';
 
 @Component({
   selector: 'app-analytics-leader-page-page',
@@ -36,14 +37,18 @@ export class AnalyticsLeaderPageComponent implements OnInit {
   membersWithRescheduled: any[] = [];
   avgCompletionMembers: any[] = [];
   inProgressDurationsMembers: { name: string, surname: string, imgUrl: string, totalInProgress: number }[] = [];
+  kanbanTasks: Task[] = [];
+  loadingTasks: boolean = false;
 
   async ngOnInit(): Promise<void> {
     this.loading = true;
+    this.loadingTasks = true;
     try {
       const membersData = await this.groupsService.getAllGroupMembers().toPromise();
       if (!membersData || (membersData.error && membersData.status)) {
         this.error = 'No se pudieron cargar los miembros del grupo (respuesta inválida).';
         this.loading = false;
+        this.loadingTasks = false;
         return;
       }
 
@@ -51,6 +56,7 @@ export class AnalyticsLeaderPageComponent implements OnInit {
       if (!Array.isArray(members) || members.length === 0) {
         this.error = 'No se encontraron miembros en el grupo.';
         this.loading = false;
+        this.loadingTasks = false;
         return;
       }
 
@@ -78,11 +84,18 @@ export class AnalyticsLeaderPageComponent implements OnInit {
       let rescheduledSum = 0;
       let timePassedSumMs = 0;
       this.inProgressDurationsMembers = [];
+      const allMemberTasks: any[] = [];
 
       const metricPromises = members.map(async (member: any) => {
         const memberId = member.id;
         const memberTasks = await this.memberService.getTasksForMember(memberId).toPromise().catch(() => []);
         const taskCount = Array.isArray(memberTasks) ? memberTasks.length : 0;
+
+        // Agregar tareas del miembro a la lista completa para el Kanban
+        if (Array.isArray(memberTasks)) {
+          allMemberTasks.push(...memberTasks);
+        }
+
         leaderTasks.push({
           memberName: member.name + ' ' + member.surname,
           imgUrl: member.imgUrl,
@@ -134,6 +147,10 @@ export class AnalyticsLeaderPageComponent implements OnInit {
 
       await Promise.all(metricPromises);
 
+      // Transformar todas las tareas para el Kanban Board
+      this.kanbanTasks = this.transformTasksForKanban(allMemberTasks);
+      this.loadingTasks = false;
+
       this.membersWithRescheduled = members.filter(m => m.rescheduledCount && m.rescheduledCount > 0);
 
       this.analyticsResource.overview = overview;
@@ -150,7 +167,29 @@ export class AnalyticsLeaderPageComponent implements OnInit {
     } catch (err) {
       this.error = 'No se pudieron cargar los miembros del grupo.';
       this.loading = false;
+      this.loadingTasks = false;
     }
+  }
+
+  private transformTasksForKanban(tasks: any[]): Task[] {
+    return tasks.map(task => ({
+      id: task.id,
+      title: task.title,
+      description: task.description,
+      status: task.status,
+      dueDate: task.dueDate,
+      createdAt: task.createdAt,
+      updatedAt: task.updatedAt,
+      timesRearranged: task.timesRearranged || 0,
+      timePassed: task.timePassed || 0,
+      member: task.member ? {
+        id: task.member.id,
+        name: task.member.name,
+        surname: task.member.surname,
+        urlImage: task.member.urlImage
+      } : null,
+      groupId: task.groupId || task.group?.id
+    }));
   }
 
   formatInProgressDuration(hours: number): string {

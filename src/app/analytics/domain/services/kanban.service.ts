@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Task, TaskStatus } from '@app/tasks/model/task.model';
 import { KanbanColumn } from '../models/kanban-column.model';
 
@@ -6,45 +7,49 @@ import { KanbanColumn } from '../models/kanban-column.model';
   providedIn: 'root'
 })
 export class KanbanService {
+  private translateService = inject(TranslateService);
 
-  private readonly columnConfig: Record<TaskStatus, { title: string; color: string; icon: string }> = {
+  private readonly columnConfig: Record<TaskStatus, { translationKey: string; color: string; icon: string }> = {
     [TaskStatus.ON_HOLD]: {
-      title: 'En Espera',
+      translationKey: 'kanban.columns.onHold',
       color: '#f59e42',
       icon: 'pause_circle_outline'
     },
     [TaskStatus.IN_PROGRESS]: {
-      title: 'En Progreso',
+      translationKey: 'kanban.columns.inProgress',
       color: '#3b82f6',
       icon: 'autorenew'
     },
     [TaskStatus.COMPLETED]: {
-      title: 'Completado',
+      translationKey: 'kanban.columns.completed',
       color: '#22c55e',
       icon: 'check_circle_outline'
     },
     [TaskStatus.DONE]: {
-      title: 'Finalizado',
+      translationKey: 'kanban.columns.done',
       color: '#14b8a6',
       icon: 'done_all'
     },
     [TaskStatus.EXPIRED]: {
-      title: 'Vencido',
+      translationKey: 'kanban.columns.expired',
       color: '#ef4444',
       icon: 'error_outline'
     }
   };
 
-  organizeTasksIntoColumns(tasks: Task[]): KanbanColumn[] {
+  organizeTasksIntoColumns(tasks: Task[], translationPrefix: string = 'analyticsMember'): KanbanColumn[] {
     const columns: KanbanColumn[] = [];
 
     Object.values(TaskStatus).forEach(status => {
       const config = this.columnConfig[status];
       const columnTasks = tasks.filter(task => task.status === status);
 
+      // Obtener la traducción usando el prefijo proporcionado
+      const title = this.translateService.instant(`${translationPrefix}.${config.translationKey}`);
+
       columns.push({
         status,
-        title: config.title,
+        title,
         tasks: columnTasks,
         color: config.color,
         icon: config.icon

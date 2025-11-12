@@ -181,4 +181,20 @@
       </li>
     </ul>
   </div>
+
+  <!-- Kanban Board Section -->
+  <div class="section-card enhanced-section metric-enhanced">
+    <div class="metric-icon-title">
+      <span class="metric-icon material-icons view_kanban">view_kanban</span>
+      <div class="metric-title-label-col">
+        <div class="metric-title">{{ 'analyticsLeader.kanban.title' | translate }}</div>
+        <div class="metric-label">{{ 'analyticsLeader.kanban.label' | translate }}</div>
+      </div>
+    </div>
+    <app-kanban-board
+      [tasks]="kanbanTasks"
+      [loading]="loadingTasks"
+      [translationPrefix]="'analyticsLeader.kanban'">
+    </app-kanban-board>
+  </div>
 </div>

@@ -1,13 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeaderAnalyticsResource } from '../../models/analytics-leader.entity';
-import {TranslatePipe} from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { KanbanBoardComponent } from '../kanban-board/kanban-board.component';
+import { Task } from '@app/tasks/model/task.model';
 
 @Component({
   selector: 'app-analytics-leader',
   templateUrl: './analytics-leader.component.html',
   styleUrls: ['./analytics-leader.component.css'],
-  imports: [CommonModule, TranslatePipe]
+  imports: [CommonModule, TranslatePipe, KanbanBoardComponent]
 })
 export class AnalyticsLeaderComponent {
   @Input() analytics!: LeaderAnalyticsResource;
@@ -15,6 +17,8 @@ export class AnalyticsLeaderComponent {
   @Input() avgCompletionMembers: any[] = [];
   @Input() inProgressDurationsMembers: { name: string, surname: string, imgUrl: string, totalInProgress: number }[] = [];
   @Input() formatInProgressDuration!: (hours: number) => string;
+  @Input() kanbanTasks: Task[] = [];
+  @Input() loadingTasks: boolean = false;
 
   get safeMembers() {
     return this.analytics?.members ?? [];

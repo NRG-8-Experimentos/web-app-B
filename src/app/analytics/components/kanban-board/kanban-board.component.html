@@ -27,14 +27,31 @@
           <p class="task-description">{{ task.description }}</p>
 
           <div class="task-footer">
-            <div class="task-date">
-              <span class="material-icons date-icon">event</span>
-              <span>{{ formatDate(task.dueDate) }}</span>
+            <div class="task-footer-left">
+              <div class="task-date">
+                <span class="material-icons date-icon">event</span>
+                <span>{{ formatDate(task.dueDate) }}</span>
+              </div>
+
+              <div class="task-rearranged" *ngIf="task.timesRearranged && task.timesRearranged > 0">
+                <span class="material-icons">sync</span>
+                <span>{{ task.timesRearranged }}</span>
+              </div>
             </div>
 
-            <div class="task-rearranged" *ngIf="task.timesRearranged && task.timesRearranged > 0">
-              <span class="material-icons">sync</span>
-              <span>{{ task.timesRearranged }}</span>
+            <div class="task-member" *ngIf="task.member">
+              <img
+                *ngIf="task.member.urlImage"
+                [src]="task.member.urlImage"
+                [alt]="task.member.name"
+                class="task-member-avatar"
+                [title]="task.member.name + ' ' + task.member.surname">
+              <span
+                *ngIf="!task.member.urlImage"
+                class="material-icons task-member-icon"
+                [title]="task.member.name + ' ' + task.member.surname">
+                account_circle
+              </span>
             </div>
           </div>
         </div>

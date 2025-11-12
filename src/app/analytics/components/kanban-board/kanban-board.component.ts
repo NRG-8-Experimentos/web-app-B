@@ -1,6 +1,6 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { KanbanService } from '@app/analytics/domain/services/kanban.service';
 import { KanbanColumn } from '@app/analytics/domain/models/kanban-column.model';
 import { Task } from '@app/tasks/model/task.model';
@@ -19,16 +19,19 @@ export class KanbanBoardComponent implements OnChanges {
 
   columns: KanbanColumn[] = [];
 
-  constructor(private kanbanService: KanbanService) {}
+  private kanbanService = inject(KanbanService);
+  private translateService = inject(TranslateService);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tasks'] && this.tasks) {
-      this.columns = this.kanbanService.organizeTasksIntoColumns(this.tasks);
+      this.columns = this.kanbanService.organizeTasksIntoColumns(this.tasks, this.translationPrefix);
     }
   }
 
   formatDate(dateString: string | undefined): string {
-    if (!dateString) return 'Sin fecha';
+    if (!dateString) {
+      return this.translateService.instant(`${this.translationPrefix}.noDate`);
+    }
 
     const date = new Date(dateString);
     return date.toLocaleDateString('es-ES', {
