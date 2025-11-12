@@ -15,7 +15,7 @@ import { Task } from '@app/tasks/model/task.model';
 export class KanbanBoardComponent implements OnChanges {
   @Input() tasks: Task[] = [];
   @Input() loading: boolean = false;
-  @Input() translationPrefix: string = 'analyticsMember.kanban';
+  @Input() translationPrefix: string = 'analyticsLeader';
 
   columns: KanbanColumn[] = [];
 
@@ -30,7 +30,7 @@ export class KanbanBoardComponent implements OnChanges {
 
   formatDate(dateString: string | undefined): string {
     if (!dateString) {
-      return this.translateService.instant(`${this.translationPrefix}.noDate`);
+      return this.translateService.instant(`${this.translationPrefix}noDate`);
     }
 
     const date = new Date(dateString);
