@@ -320,6 +320,7 @@
 .metric-icon.schedule { color: #a21caf; background: #f3e8ff; }
 .metric-icon.info { color: #2563eb; background: #e0e7ff; }
 .metric-icon.list_alt { color: #f59e42; background: #fff7ed; }
+.metric-icon.view_kanban { color: #8b5cf6; background: #f3e8ff; }
 
 .progress-list {
   margin-top: 18px;

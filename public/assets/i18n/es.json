@@ -344,6 +344,20 @@
       "label": "Duración individual y total",
       "noTasks": "No hay tareas en progreso.",
       "total": "Total:"
+    },
+    "kanban": {
+      "title": "Tablero Kanban",
+      "label": "Visualización de tareas por estado",
+      "loading": "Cargando tablero...",
+      "noTasks": "No hay tareas",
+      "columns": {
+        "onHold": "En Espera",
+        "inProgress": "En Progreso",
+        "completed": "Completado",
+        "done": "Finalizado",
+        "expired": "Vencido"
+      },
+      "noDate": "Sin fecha"
     }
   },
   "analyticsLeader": {
@@ -383,6 +397,20 @@
       "title": "Tiempo de Tareas en Progreso",
       "label": "Duración total de cada miembro",
       "noTime": "Sin tiempo registrado"
+    },
+    "kanban": {
+      "title": "Tablero Kanban del Equipo",
+      "label": "Visualización de todas las tareas del grupo",
+      "loading": "Cargando tablero...",
+      "noTasks": "No hay tareas",
+      "columns": {
+        "onHold": "En Espera",
+        "inProgress": "En Progreso",
+        "completed": "Completado",
+        "done": "Finalizado",
+        "expired": "Vencido"
+      },
+      "noDate": "Sin fecha"
     }
   }
 }
