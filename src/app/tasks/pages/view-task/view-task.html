@@ -33,8 +33,65 @@
     <footer class="actions">
       <button class="btn btn--back" (click)="back()">{{'viewTask.return'|translate}}</button>
     </footer>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+      <div class="comments-header">
+        <h3 class="comments-title">{{ 'viewTask.comments' | translate }}</h3>
+        <button class="btn btn--comment" (click)="toggleCommentForm()">
+          {{ showCommentForm ? ('viewTask.cancelComment' | translate) : ('viewTask.addComment' | translate) }}
+        </button>
+      </div>
+
+      <!-- Add Comment Form -->
+      <div class="comment-form" *ngIf="showCommentForm">
+        <textarea
+          class="comment-input"
+          [(ngModel)]="newComment"
+          [placeholder]="'viewTask.commentPlaceholder' | translate"
+          rows="4"
+        ></textarea>
+        <button
+          class="btn btn--submit"
+          (click)="addComment()"
+          [disabled]="!newComment.trim() || savingComment"
+        >
+          {{ savingComment ? ('viewTask.saving' | translate) : ('viewTask.submitComment' | translate) }}
+        </button>
+      </div>
+
+      <!-- Comments List -->
+      <div class="comments-list" *ngIf="!loadingComments; else loadingCommentsTpl">
+        <div class="comment-item" *ngFor="let comment of comments">
+          <div class="comment-header">
+            <span class="comment-type" [class.modification]="comment.requestType === 'MODIFICATION'">
+              {{ comment.requestType }}
+            </span>
+            <span class="comment-status" [class.pending]="comment.requestStatus === 'PENDING'"
+                                        [class.approved]="comment.requestStatus === 'APPROVED'"
+                                        [class.rejected]="comment.requestStatus === 'REJECTED'">
+              {{ comment.requestStatus }}
+            </span>
+          </div>
+          <p class="comment-text">{{ comment.description }}</p>
+        </div>
+        <div class="no-comments" *ngIf="comments.length === 0">
+          {{ 'viewTask.noComments' | translate }}
+        </div>
+      </div>
+
+      <ng-template #loadingCommentsTpl>
+        <div class="loading-comments">{{ 'viewTask.loadingComments' | translate }}</div>
+      </ng-template>
+    </div>
   </article>
+
+
 </section>
+
+<div>
+
+</div>
 
 <ng-template #loadingTpl>
   <div class="loading">{{'viewTask.loading'|translate}}</div>
