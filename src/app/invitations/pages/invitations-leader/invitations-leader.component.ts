@@ -6,6 +6,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitations-leader',
+  standalone: true,
   imports: [
     InvitationListComponent,
     TranslatePipe

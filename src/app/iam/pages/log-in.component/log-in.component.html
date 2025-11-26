@@ -1,39 +1,39 @@
 <div class="screen">
-  <div class = "login-container">
-    <div class = "logo-container">
-      <div style="display: flex; justify-content: center;">
-        <p style="font-size: 40px; font-weight: bold; color: #4A90E2;">Syn</p>
-        <p style="font-size: 40px; font-weight: bold;">hub</p>
+  <div class="login-container card">
+    <div class="logo-container">
+      <div class="brand-title">
+        <span class="brand-syn">Syn</span><span class="brand-hub">hub</span>
       </div>
-      <img src="assets/images/synhub_logo.png" alt="Synhub Logo" class="synhub-logo">
+      <img src="assets/images/synhub_logo_transparent.png" alt="Synhub Logo" class="synhub-logo" />
       <app-language-switcher></app-language-switcher>
     </div>
+
     <div class="login-form">
-      <div class = "form">
-        <div style="display: flex; justify-content: center;">
-          <p style="font-size: 40px; font-weight: bold;">{{'login.title'|translate}}</p>
-        </div>
-        <div style="height: 40px;"></div>
+      <div class="form panel">
+        <div class="title">{{ 'login.title' | translate }}</div>
+
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="fill" class="custom-form-field full-width">
-            <mat-label>{{'login.username.label'|translate}}</mat-label>
-            <mat-icon matPrefix style="color: #888;">person</mat-icon>
-            <input matInput formControlName="username" placeholder="{{'login.username.placeholder'|translate}}" type="text" required>
+            <mat-label>{{ 'login.username.label' | translate }}</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput formControlName="username" [placeholder]="'login.username.placeholder'|translate" type="text" required />
             <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
-              {{'login.username.required'|translate}}
+              {{ 'login.username.required' | translate }}
             </mat-error>
           </mat-form-field>
+
           <mat-form-field appearance="fill" class="custom-form-field full-width">
-            <mat-label>{{'login.password.label'|translate}}</mat-label>
-            <mat-icon matPrefix style="color: #888;">lock</mat-icon>
-            <input matInput formControlName="password" placeholder="{{'login.password.placeholder'|translate}}" type="password" required>
+            <mat-label>{{ 'login.password.label' | translate }}</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
+            <input matInput formControlName="password" [placeholder]="'login.password.placeholder'|translate" type="password" required />
             <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-              {{'login.password.required'|translate}}
+              {{ 'login.password.required' | translate }}
             </mat-error>
           </mat-form-field>
-          <!-- ngx-captcha reCAPTCHA v2 -->
-          <div style="margin-bottom: 16px; display: flex; flex-direction: column; align-items: center;">
-            <ngx-recaptcha2 #captchaElem
+
+          <div class="captcha-wrapper">
+            <ngx-recaptcha2
+              #captchaElem
               [siteKey]="siteKey"
               (reset)="handleReset()"
               (expire)="handleExpire()"
@@ -41,13 +41,18 @@
               (success)="handleSuccess($event)"
               formControlName="recaptcha">
             </ngx-recaptcha2>
-            <div *ngIf="loginForm.get('recaptcha')?.invalid && loginForm.get('recaptcha')?.touched" style="color: #d32f2f; font-size: 12px; margin-top: 8px; text-align: center;">
-              {{'login.captcha.required'|translate}}
+            <div class="captcha-error" *ngIf="loginForm.get('recaptcha')?.invalid && loginForm.get('recaptcha')?.touched">
+              {{ 'login.captcha.required' | translate }}
             </div>
           </div>
+
           <div class="button-container">
-            <button mat-raised-button color="primary" class="custom-button-1" type="submit" [disabled]="loginForm.invalid">{{'login.button.sign_in'|translate}}</button>
-            <button mat-raised-button color="primary" class="custom-button-2" type="button" (click)="onGotoSignUp()">{{'login.button.sign_up'|translate}}</button>
+            <button mat-raised-button class="btn-primary" type="submit" [disabled]="loginForm.invalid">
+              {{ 'login.button.sign_in' | translate }}
+            </button>
+            <button mat-raised-button class="btn-ghost" type="button" (click)="onGotoSignUp()">
+              {{ 'login.button.sign_up' | translate }}
+            </button>
           </div>
         </form>
       </div>

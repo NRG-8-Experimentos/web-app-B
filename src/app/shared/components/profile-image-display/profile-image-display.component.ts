@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-profile-image-display',
+  standalone: true,
   imports: [
   ],
   template: `

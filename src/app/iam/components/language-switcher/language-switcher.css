@@ -4,3 +4,22 @@
 .language-option{
   color: white;
 }
+.language-switcher{
+  background-color: #4A90E2;
+  border-radius: 8px;
+}
+
+.language-option{
+  color: #000 !important;
+}
+
+.language-switcher .mat-button-toggle-label-content{
+  color: #000 !important;
+}
+.language-switcher .mat-button-toggle-checked .mat-button-toggle-label-content{
+  color: #000 !important;
+}
+
+
+
+

@@ -412,5 +412,16 @@
       },
       "noDate": "No date"
     }
+  },
+  "appearance": {
+    "title": "Appearance",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "effective": "Effective mode",
+    "themeFab": {
+      "toLight": "Switch to light",
+      "toDark": "Switch to dark"
+    }
   }
 }

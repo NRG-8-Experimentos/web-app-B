@@ -8,8 +8,34 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var KEY = 'appearance';                       // 'light' | 'dark' | 'auto'
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+        var mode = localStorage.getItem(KEY) || 'auto';
+
+        function eff(m){ return (m==='light'||m==='dark') ? m : (mq.matches ? 'dark' : 'light'); }
+        function apply(e){
+          var r = document.documentElement;
+          if(e==='dark'){ r.classList.add('theme-dark'); r.style.colorScheme='dark'; }
+          else { r.classList.remove('theme-dark'); r.style.colorScheme='light'; }
+        }
+        apply(eff(mode));
+        mq.addEventListener && mq.addEventListener('change', function(e){
+          if((localStorage.getItem(KEY)||'auto')==='auto') apply(e.matches?'dark':'light');
+        });
+        window.__appearance = {
+          getMode: function(){ return localStorage.getItem(KEY) || 'auto'; },
+          setMode: function(next){ localStorage.setItem(KEY,next); apply(eff(next));
+            window.analytics && window.analytics.track && window.analytics.track('appearance_change',{mode:next}); },
+          getEffective: function(){ return document.documentElement.classList.contains('theme-dark') ? 'dark':'light'; }
+        };
+      } catch(e){}
+    })();
+  </script>
 </head>
 <body>
-  <app-root></app-root>
+<app-root></app-root>
 </body>
 </html>

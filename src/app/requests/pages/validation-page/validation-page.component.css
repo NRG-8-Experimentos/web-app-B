@@ -117,3 +117,40 @@
   font-size: 20px;
   vertical-align: middle;
 }
+.validation-container{
+  color: var(--text);
+}
+
+.card{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+
+.card-inner{
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.member-name{ color: var(--text) !important; }
+
+.divider{
+  background: var(--border) !important;
+}
+
+.description{ color: var(--text) !important; }
+
+.date-label{
+  color: var(--muted) !important;
+}
+
+.date-value{
+  color: var(--text) !important;
+}
+
+.status-bar{
+  border: 1px solid color-mix(in oklab, var(--border) 60%, transparent) !important;
+}
+
+.action-btn{ color: #fff; }

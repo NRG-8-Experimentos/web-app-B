@@ -18,6 +18,7 @@ function imageUrlValidator(control: AbstractControl): ValidationErrors | null {
 
 @Component({
   selector: 'app-create-group',
+  standalone: true,
   imports: [MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
@@ -26,53 +27,56 @@ function imageUrlValidator(control: AbstractControl): ValidationErrors | null {
   template: `
     <div class="w-full h-full">
       <h2 class="text-2xl font-bold">{{ 'createGroup.title' | translate }}</h2>
-      <form [formGroup]="createGroupForm" (ngSubmit)="onSubmit()" class="container h-full p-10 flex flex-col ">
-        <div class="flex flex-col">
-          <mat-form-field appearance="fill" class="custom-form-field full-width">
-            <mat-label>{{ 'createGroup.fields.name.label' | translate }}</mat-label>
-            <mat-icon matPrefix style="color: #888;">person</mat-icon>
-            <input matInput formControlName="name" placeholder="'createGroup.fields.name.placeholder' | translate" type="text" required>
-            @if (createGroupForm.get('name')?.hasError){
-              <mat-error >
-                {{ 'createGroup.fields.name.required' | translate }}
-              </mat-error>
-            }
-          </mat-form-field>
-          <mat-form-field appearance="fill" class="custom-form-field full-width">
-            <mat-label>{{ 'createGroup.fields.description.label' | translate }}</mat-label>
-            <mat-icon matPrefix style="color: #888;">group</mat-icon>
-            <textarea matInput formControlName="description" placeholder="{{'createGroup.fields.description.placeholder' | translate}}" type="text" required rows="8" ></textarea>
-            @if (createGroupForm.get('description')?.hasError){
-              <mat-error >
-                {{ 'createGroup.fields.description.required' | translate }}
-              </mat-error>
-            }
-          </mat-form-field>
+      <div class="w-full h-full themed-surface">
+        <form [formGroup]="createGroupForm" (ngSubmit)="onSubmit()" class="container h-full p-10 flex flex-col ">
+          <div class="flex flex-col">
+            <mat-form-field appearance="fill" class="custom-form-field full-width">
+              <mat-label>{{ 'createGroup.fields.name.label' | translate }}</mat-label>
+              <mat-icon matPrefix style="color: #888;">person</mat-icon>
+              <input matInput formControlName="name" placeholder="'createGroup.fields.name.placeholder' | translate" type="text" required>
+              @if (createGroupForm.get('name')?.hasError){
+                <mat-error >
+                  {{ 'createGroup.fields.name.required' | translate }}
+                </mat-error>
+              }
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="custom-form-field full-width">
+              <mat-label>{{ 'createGroup.fields.description.label' | translate }}</mat-label>
+              <mat-icon matPrefix style="color: #888;">group</mat-icon>
+              <textarea matInput formControlName="description" placeholder="{{'createGroup.fields.description.placeholder' | translate}}" type="text" required rows="8" ></textarea>
+              @if (createGroupForm.get('description')?.hasError){
+                <mat-error >
+                  {{ 'createGroup.fields.description.required' | translate }}
+                </mat-error>
+              }
+            </mat-form-field>
 
-          <mat-form-field appearance="fill" class="custom-form-field full-width">
-            <mat-label>{{ 'createGroup.fields.imgUrl.label' | translate }}</mat-label>
-            <mat-icon matPrefix style="color: #888;">link</mat-icon>
-            <input matInput formControlName="imgUrl" placeholder="{{'createGroup.fields.imgUrl.placeholder' | translate}}" type="text" required>
-            @if (createGroupForm.get('imgUrl')?.hasError('required')){
-              <mat-error >
-                {{ 'createGroup.fields.imgUrl.required' | translate }}
-              </mat-error>
-            }
-            @if (createGroupForm.get('imgUrl')?.hasError('invalidImageUrl')){
-              <mat-error>
-                {{ 'createGroup.fields.imgUrl.invalid' | translate }}
-              </mat-error>
-            }
-          </mat-form-field>
-        </div>
-        <div class="h-full flex justify-center items-center">
-          <button
-            [disabled]="createGroupForm.invalid"
-            class="bg-[#4A90E2] rounded-2xl text-white text-xl py-2 px-6 shadow-md shadow-gray-400 hover:cursor-pointer hover:bg-[#559df2] transition disabled:bg-gray-400 disabled:cursor-default">
-            {{ 'createGroup.actions.save' | translate }}
-          </button>
-        </div>
-      </form>
+            <mat-form-field appearance="fill" class="custom-form-field full-width">
+              <mat-label>{{ 'createGroup.fields.imgUrl.label' | translate }}</mat-label>
+              <mat-icon matPrefix style="color: #888;">link</mat-icon>
+              <input matInput formControlName="imgUrl" placeholder="{{'createGroup.fields.imgUrl.placeholder' | translate}}" type="text" required>
+              @if (createGroupForm.get('imgUrl')?.hasError('required')){
+                <mat-error >
+                  {{ 'createGroup.fields.imgUrl.required' | translate }}
+                </mat-error>
+              }
+              @if (createGroupForm.get('imgUrl')?.hasError('invalidImageUrl')){
+                <mat-error>
+                  {{ 'createGroup.fields.imgUrl.invalid' | translate }}
+                </mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <div class="h-full flex justify-center items-center">
+            <button
+              [disabled]="createGroupForm.invalid"
+              class="bg-[#4A90E2] rounded-2xl text-white text-xl py-2 px-6 shadow-md shadow-gray-400 hover:cursor-pointer hover:bg-[#559df2] transition disabled:bg-gray-400 disabled:cursor-default">
+              {{ 'createGroup.actions.save' | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+
     </div>
   `,
   styles: ``

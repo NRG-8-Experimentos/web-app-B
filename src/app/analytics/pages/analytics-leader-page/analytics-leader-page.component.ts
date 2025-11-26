@@ -11,6 +11,7 @@ import { Task } from '@app/tasks/model/task.model';
 
 @Component({
   selector: 'app-analytics-leader-page-page',
+  standalone: true,
   templateUrl: './analytics-leader-page.component.html',
   styleUrls: ['./analytics-leader-page.component.css'],
   imports: [CommonModule, AnalyticsLeaderComponent, TranslatePipe]

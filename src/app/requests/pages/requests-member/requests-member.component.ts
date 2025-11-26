@@ -8,6 +8,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-requests-member',
+  standalone: true,
   imports: [
     CommonModule,
     RequestCardListComponent,
@@ -40,7 +41,7 @@ export class RequestsMemberComponent {
   private getData() {
     this.requestApiService.getMemberRequests().subscribe((response: Array<Request>) => {
       this.allRequests.set(response);
-      this.requests = response; // para compatibilidad con el input actual
+      this.requests = response;
     }, error => {
       console.error('There was an error fetching requests!', error);
     });

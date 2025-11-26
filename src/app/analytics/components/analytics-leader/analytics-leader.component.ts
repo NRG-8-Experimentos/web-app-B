@@ -7,6 +7,7 @@ import { Task } from '@app/tasks/model/task.model';
 
 @Component({
   selector: 'app-analytics-leader',
+  standalone:true,
   templateUrl: './analytics-leader.component.html',
   styleUrls: ['./analytics-leader.component.css'],
   imports: [CommonModule, TranslatePipe, KanbanBoardComponent]

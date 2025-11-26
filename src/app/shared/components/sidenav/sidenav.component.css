@@ -1,5 +1,6 @@
 .sidenav{
-  background: #1A4E85;
+  background: var(--sidenav-bg, var(--sidebar-bg));
+  color: var(--sidenav-fg, var(--sidebar-fg));
   transition: all .5s ease;
   position: fixed;
   z-index: 1;
@@ -14,83 +15,45 @@
     width: 100%;
 
     .logo{
-      background: #ffff;
-      color: #1A4E85;
+      background: var(--sidenav-fg, var(--sidebar-fg));
+      color: var(--sidenav-bg, var(--sidebar-bg));
       text-align: center;
-      width:3rem;
-      height:3rem;
-      min-width:3rem;
+      width:3rem; height:3rem; min-width:3rem;
       border-radius:0.313rem;
       padding: 0.313rem;
-      font-size:24px;
-      font-weight: 900;
-      cursor: pointer;
-      border:none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size:24px; font-weight: 900;
+      cursor: pointer; border:none;
+      display: flex; align-items: center; justify-content: center;
 
-      .logo-image {
-        width: 100%;
-        height: auto;
-        max-width: 2.5rem;
-        max-height: 2.5rem;
-        object-fit: contain;
-      }
+      .logo-image { width: 100%; height: auto; max-width: 2.5rem; max-height: 2.5rem; object-fit: contain; }
     }
 
-    .logo-text{
-      margin-left: 1.5rem;
-      font-size: 24px;
-      font-weight: 700;
-      color: #fff;
-    }
+    .logo-text{ margin-left: 1.5rem; font-size: 24px; font-weight: 700; color: var(--sidenav-fg, var(--sidebar-fg)); }
 
     .btn-close{
-      margin-left: auto;
-      cursor: pointer;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background-color: transparent;
-      border: none;
+      margin-left: auto; cursor: pointer;
+      width: 2rem; height: 2rem; border-radius: 50%;
+      background-color: transparent; border: none;
 
-      .fa-times{
-        color: #fff;
-        font-size: 24px;
-      }
+      .fa-times{ color: var(--sidenav-fg, var(--sidebar-fg)); font-size: 24px; }
     }
   }
 }
 
 .user-pfp{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
   padding: 1.25rem 0;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 1px solid var(--sidenav-border, var(--sidebar-border));
 
-  .pfp-image{
-    width: 9rem;
-    height: 9rem;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+  .pfp-image{ width: 9rem; height: 9rem; border-radius: 50%; object-fit: cover; }
 }
 
-
-.sidenav-collapsed{
-  width: 16.5625rem
-}
+.sidenav-collapsed{ width: 16.5625rem }
 
 .sidenav-nav {
   list-style: none;
-  padding: 0.938rem;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  padding: 0.938rem; margin: 0;
+  display: flex; flex-direction: column; align-items: center;
   cursor: pointer;
 
   .sidenav-nav-item{
@@ -98,56 +61,40 @@
     margin-bottom: 0.625rem;
 
     .sidenav-nav-link{
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       height: 3rem;
-      color: #f3f3f3;
+      color: var(--sidenav-fg, var(--sidebar-fg));
       text-decoration: none;
       border-radius: 0.625rem;
-      transition: color .3s ease;
+      transition: color .2s ease, background .2s ease;
 
       &:hover {
-        color: #1A4E85;
-        background: #ffffff;
+        color: var(--sidenav-hover-fg, var(--sidebar-hover-fg));
+        background: var(--sidenav-hover-bg, var(--sidebar-hover-bg));
       }
 
       .sidenav-link-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: flex; align-items: center; justify-content: center;
         font-size: 22px;
-        width: 2rem;
-        min-width: 2rem;
-        margin: 0 0.5rem;
-        text-align: center;
-        padding: 0;
-
-        &:hover {
-          color: #1A4E85;
-          background: #ffffff;
-        }
+        width: 2rem; min-width: 2rem;
+        margin: 0 0.5rem; text-align: center; padding: 0;
       }
-      .sidenav-link-text{
-        margin-left: 1rem;
-      }
+      .sidenav-link-text{ margin-left: 1rem; }
     }
   }
 }
 
 .active{
-  background: #ffffff;
-
+  background: var(--sidenav-active-bg, var(--sidebar-active-bg));
   .sidenav-link-icon, .sidenav-link-text{
-    color: #000000;
+    color: var(--sidenav-active-fg, var(--sidebar-active-fg));
     font-weight: 600;
   }
 }
 
-.logout-section{
-  border-top: 2px solid #ffffff;
-}
-
-.language-switcher-section{
-  border-top: 2px solid #ffffff;
+.logout-section,
+.language-switcher-section,
+.appearance-section{
+  border-top: 1px solid var(--sidenav-border, var(--sidebar-border));
   padding: 1.5rem;
 }

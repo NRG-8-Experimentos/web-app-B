@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import {MatInputModule,} from '@angular/material/input';
-import {CommonModule} from '@angular/common';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
-import {AuthService} from '../../services/auth.service';
-import {NgxCaptchaModule, ReCaptcha2Component} from 'ngx-captcha';
-import {TranslatePipe} from '@ngx-translate/core';
+import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
+import { AuthService } from '../../services/auth.service';
+import { NgxCaptchaModule, ReCaptcha2Component } from 'ngx-captcha';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up.component',
@@ -62,44 +62,31 @@ export class SignUpComponent implements OnInit {
     }, { validators: this.passwordsMatchValidator });
   }
 
-  handleSuccess(captchaResponse: string): void {
-    // Optionally handle success
-  }
-
-  handleReset(): void {
-    // Optionally handle reset
-  }
-
-  handleExpire(): void {
-    this.registerForm.get('recaptcha')?.reset();
-  }
-
-  handleLoad(): void {
-    // Optionally handle load
-  }
+  handleSuccess(_: string): void {}
+  handleReset(): void {}
+  handleExpire(): void { this.registerForm.get('recaptcha')?.reset(); }
+  handleLoad(): void {}
 
   onSubmit(): void {
     if (this.registerForm.invalid) return;
     this.submitted = true;
-
-    const formValue = this.registerForm.value;
+    const v = this.registerForm.value;
     const signUpRequest = {
-      username: formValue.username,
-      name: formValue.name,
-      surname: formValue.surname,
-      imgUrl: formValue.imgUrl,
-      email: formValue.email,
-      password: formValue.password,
-      roles: [formValue.role === 'leader' ? 'ROLE_LEADER' : 'ROLE_MEMBER'],
-      captcha: formValue.recaptcha
+      username: v.username,
+      name: v.name,
+      surname: v.surname,
+      imgUrl: v.imgUrl,
+      email: v.email,
+      password: v.password,
+      roles: [v.role === 'leader' ? 'ROLE_LEADER' : 'ROLE_MEMBER'],
+      captcha: v.recaptcha
     };
-
     this.authService.signUp(signUpRequest);
   }
 
   passwordsMatchValidator(form: FormGroup) {
-    const password = form.get('password')?.value;
-    const confirmPassword = form.get('confirmPassword')?.value;
-    return password === confirmPassword ? null : { passwordMismatch: true };
+    const p = form.get('password')?.value;
+    const c = form.get('confirmPassword')?.value;
+    return p === c ? null : { passwordMismatch: true };
   }
 }

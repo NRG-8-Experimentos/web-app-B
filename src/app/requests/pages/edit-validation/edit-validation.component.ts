@@ -13,6 +13,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-validation',
+  standalone: true,
   imports: [
     CommonModule,
     FormsModule,

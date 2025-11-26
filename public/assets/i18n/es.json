@@ -412,5 +412,16 @@
       },
       "noDate": "Sin fecha"
     }
+  },
+  "appearance": {
+    "title": "Apariencia",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "effective": "Modo efectivo",
+    "themeFab": {
+      "toLight": "Cambiar a claro",
+      "toDark": "Cambiar a oscuro"
+    }
   }
 }

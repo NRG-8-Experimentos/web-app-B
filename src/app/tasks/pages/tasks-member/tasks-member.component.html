@@ -1,11 +1,17 @@
 <section class="toolbar" *ngIf="totalCount() > 0">
   <label>
-    {{'taskMember.state'|translate }}
-    <select [(ngModel)]="filter">
-      <option *ngFor="let s of statusOptions" [ngValue]="s">{{ labelFor(s) | translate}}</option>
+    {{ 'taskMember.state' | translate }}
+    <select class="state-select"
+            [ngModel]="filter()"
+            (ngModelChange)="filter.set($event)">
+      <option *ngFor="let s of statusOptions" [ngValue]="s">
+        {{ labelFor(s) | translate }}
+      </option>
     </select>
   </label>
 </section>
+
+
 
 <ng-container *ngIf="totalCount() === 0; else tasksTpl">
   <div class="empty-page">

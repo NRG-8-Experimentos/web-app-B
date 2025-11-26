@@ -84,13 +84,20 @@ export class Task {
     </div>
   `,
   styles: [`
+    :host{ display:block; background:var(--bg); color:var(--text); }
+    :host .bg-white{ background:var(--surface) !important; }
+    :host .text-slate-900{ color:var(--text) !important; }
+    :host .border-gray-100{ border-color:var(--border) !important; }
+    :host .border-gray-200{ border-color:var(--border) !important; }
+    :host .bg-gray-50{ background:var(--surface-2) !important; color:var(--text) !important; }
+    :host .text-gray-500{ color:var(--muted) !important; }
+
     @media (min-width: 640px) {
-      .tasks-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .tasks-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    select { background: #fff; }
+    select { background: var(--surface); color: var(--text); border-color: var(--border); }
   `]
+
 })
 export class TaskMemberDetailsComponent implements OnInit {
   tasks: Task[] = [];
