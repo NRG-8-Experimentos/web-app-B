@@ -113,6 +113,6 @@ export class ViewTaskComponent implements OnInit {
   }
 
   canAddComments(): boolean {
-    return this.userRole === 'ROLE_LEADER' || this.userRole === 'ROLE_MEMBER';
+    return this.userRole === 'ROLE_MEMBER';
   }
 }
