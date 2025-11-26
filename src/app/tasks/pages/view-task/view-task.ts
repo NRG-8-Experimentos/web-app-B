@@ -6,6 +6,7 @@ import { TasksApiService, Task } from '../../services/tasks-api.service';
 import {TranslatePipe} from '@ngx-translate/core';
 import { RequestApiService } from '@app/requests/services/request-api.service';
 import { Request } from '@app/requests/model/request.entity';
+import { AuthService } from '@app/iam/services/auth.service';
 
 @Component({
   selector: 'app-view-task',
@@ -19,6 +20,7 @@ export class ViewTaskComponent implements OnInit {
   private router = inject(Router);
   private api = inject(TasksApiService);
   private requestApi = inject(RequestApiService);
+  private authService = inject(AuthService);
 
   task?: Task;
   loading = true;
@@ -27,8 +29,19 @@ export class ViewTaskComponent implements OnInit {
   newComment = '';
   savingComment = false;
   showCommentForm = false;
+  userRole = '';
 
   ngOnInit() {
+    // Subscribe to user role
+    this.authService.currentUserType.subscribe(role => {
+      this.userRole = role;
+    });
+
+    // Also read from localStorage as fallback
+    if (!this.userRole) {
+      this.userRole = localStorage.getItem('role') || '';
+    }
+
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (!id) { this.back(); return; }
     this.api.getById(id).subscribe({
@@ -97,5 +110,9 @@ export class ViewTaskComponent implements OnInit {
     if (now > end) return 'late';
     const ratio = (now - start) / (end - start);
     return ratio < 0.7 ? 'ok' : 'warn';
+  }
+
+  canAddComments(): boolean {
+    return this.userRole === 'ROLE_LEADER' || this.userRole === 'ROLE_MEMBER';
   }
 }

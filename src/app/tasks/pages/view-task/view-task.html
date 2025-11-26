@@ -38,13 +38,13 @@
     <div class="comments-section">
       <div class="comments-header">
         <h3 class="comments-title">{{ 'viewTask.comments' | translate }}</h3>
-        <button class="btn btn--comment" (click)="toggleCommentForm()">
+        <button class="btn btn--comment" (click)="toggleCommentForm()" *ngIf="canAddComments()">
           {{ showCommentForm ? ('viewTask.cancelComment' | translate) : ('viewTask.addComment' | translate) }}
         </button>
       </div>
 
       <!-- Add Comment Form -->
-      <div class="comment-form" *ngIf="showCommentForm">
+      <div class="comment-form" *ngIf="showCommentForm && canAddComments()">
         <textarea
           class="comment-input"
           [(ngModel)]="newComment"
