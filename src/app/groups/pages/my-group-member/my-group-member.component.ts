@@ -10,13 +10,16 @@ import {MemberGroupService} from '@app/groups/services/member-group.service';
 import {MemberGroup} from '@app/groups/model/member-group.entity';
 import {ShortMember} from '@app/shared/model/short-member.entity';
 import {TranslatePipe} from '@ngx-translate/core';
+import {
+  NotificationFloatingListComponent
+} from '@app/shared/components/notification-floating-list/notification-floating-list';
 
 @Component({
   selector: 'app-my-group-member',
   standalone: true,
   imports: [MatIconModule,
     ProfileImageDisplayComponent,
-    NoGroupMemberDisplayComponent, TranslatePipe],
+    NoGroupMemberDisplayComponent, TranslatePipe, NotificationFloatingListComponent],
   templateUrl: './my-group-member.component.html',
   styleUrl: './my-group-member.component.css'
 })

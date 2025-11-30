@@ -1,10 +1,5 @@
 <main>
-
-  @if (showSideBar) {
-    <app-notification-floating-list></app-notification-floating-list>
-  }
-
-  <div class="screen">
+  <div class="screen app-bg">
     @if (showSideBar) {
       <app-sidenav
         [navData]="isLeader ? optionsLeader : optionsMember"
@@ -12,6 +7,7 @@
         (onToggleSideNav)="onToggleSideNav($event)">
       </app-sidenav>
     }
+
     <app-body
       [collapsed]="isSideNavCollapsed"
       [screenWidth]="screenWidth"
