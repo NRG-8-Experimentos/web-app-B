@@ -3,6 +3,7 @@ import {GroupDisplayComponent} from '@app/groups/components/group-display/group-
 
 @Component({
   selector: 'app-my-group-leader',
+  standalone: true,
   imports: [
     GroupDisplayComponent
   ],

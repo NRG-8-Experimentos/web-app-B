@@ -6,6 +6,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-requests-leader',
+  standalone: true,
   imports: [
     RequestCardListComponent,
     TranslatePipe

@@ -17,17 +17,18 @@
 
     <mat-form-field appearance="outline" class="w-full assignee-field">
       <mat-label>{{ 'editTask.assignTo'|translate }}</mat-label>
-      <mat-select [(ngModel)]="memberId" name="memberId">
+
+      <mat-select [(ngModel)]="memberId" name="memberId" [panelClass]="'assignee-panel'">
         <mat-select-trigger>
-          <span class="trigger no-pointer no-select">
-            <ng-container *ngIf="selectedMember; else noneTpl">
-              <img class="avatar" [src]="imgFor(selectedMember)" alt="avatar seleccionado" />
-              <span class="trigger-text">{{ memberLabel(selectedMember!) }}</span>
-            </ng-container>
-            <ng-template #noneTpl>
-              <span class="muted">{{ 'editTask.wAssign'|translate }}</span>
-            </ng-template>
-          </span>
+      <span class="trigger no-pointer no-select">
+        <ng-container *ngIf="selectedMember; else noneTpl">
+          <img class="avatar" [src]="imgFor(selectedMember)" alt="avatar seleccionado" />
+          <span class="trigger-text">{{ memberLabel(selectedMember!) }}</span>
+        </ng-container>
+        <ng-template #noneTpl>
+          <span class="muted">{{ 'editTask.wAssign'|translate }}</span>
+        </ng-template>
+      </span>
         </mat-select-trigger>
 
         <mat-option [value]="undefined">{{ 'editTask.wAssign'|translate }}</mat-option>
@@ -39,6 +40,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+
 
     <div class="field">
       <label for="due">{{ 'editTask.dueDate'|translate }}</label>

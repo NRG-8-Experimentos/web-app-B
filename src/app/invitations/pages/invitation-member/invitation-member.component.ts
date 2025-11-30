@@ -13,6 +13,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitation-member',
+  standalone: true,
   imports: [
     MatFormField,
     MatLabel,

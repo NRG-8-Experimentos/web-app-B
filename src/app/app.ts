@@ -6,6 +6,8 @@ import {BodyComponent} from './shared/pages/body/body.component';
 import {LoginEventService} from './iam/services/login-event.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {DetailsService} from './shared/services/details.service';
+import {AppearanceService} from '@app/shared/services/appearance.service';
+import {AppearanceToggleComponent} from '@app/shared/components/appearance-toggle/appearance-toggle.component';
 
 interface SideNavToggle{
   screenWidth: number;
@@ -20,7 +22,7 @@ export const LOGOUT_OPTION = {
 
 @Component({
   selector: 'app-root',
-  imports: [SidenavComponent, BodyComponent],
+  imports: [SidenavComponent, BodyComponent, AppearanceToggleComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

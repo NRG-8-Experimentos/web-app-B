@@ -1,0 +1,2 @@
+.title-24 { font-size: 24px; font-weight: bold; color: var(--text); }
+:host { display:block; background: var(--bg); color: var(--text); }

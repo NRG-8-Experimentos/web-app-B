@@ -13,6 +13,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-group-member',
+  standalone: true,
   imports: [MatIconModule,
     ProfileImageDisplayComponent,
     NoGroupMemberDisplayComponent, TranslatePipe],

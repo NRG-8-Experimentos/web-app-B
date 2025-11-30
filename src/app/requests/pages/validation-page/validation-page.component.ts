@@ -7,6 +7,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-validation-page',
+  standalone: true,
   imports: [
     NgStyle,
     TranslatePipe

@@ -28,7 +28,7 @@ export class InvitationComponent {
     this.detailsService.acceptOrDeclineInvitation(this.invitation.id, false)
       .subscribe({
         next: () => { this.invitationChanged.emit(); },
-        error: err => { /* mostrar error */ }
+        error: err => {  }
       });
   }
 
@@ -39,7 +39,7 @@ export class InvitationComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.invitationChanged.emit(); // Actualiza la lista si se aceptó la invitación
+        this.invitationChanged.emit();
       }
     });
   }

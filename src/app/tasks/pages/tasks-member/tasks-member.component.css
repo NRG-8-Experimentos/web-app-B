@@ -1,82 +1,73 @@
-
-.list {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr;
+.list{
+  display:grid;
+  gap:24px;
+  grid-template-columns:1fr;
+}
+@media (min-width:900px){
+  .list{grid-template-columns:repeat(2,1fr)}
 }
 
-@media (min-width: 900px) {
-  .list {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.toolbar{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:28px;
+  color:var(--text);
+}
+.toolbar label{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.toolbar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
+.toolbar .state-select{
+  background:var(--surface);
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 14px;
+  min-width:180px;
+  cursor:pointer;
+  box-shadow:var(--elev-1);
+  transition:border-color ease, box-shadow ease, background ease, color ease;
+  color-scheme:light dark;
+}
+.toolbar .state-select:hover{
+  border-color:color-mix(in oklab, var(--primary) 40%, var(--border));
+  box-shadow:var(--elev-2);
+}
+.toolbar .state-select:focus-visible{
+  outline:0;
+  box-shadow:0 0 0 2px color-mix(in oklab, var(--primary) 30%, transparent);
+  border-color:color-mix(in oklab, var(--primary) 55%, var(--border));
+}
+.toolbar .state-select option{
+  background:var(--surface);
+  color:var(--text);
 }
 
-select {
-  background: transparent;
-  color: inherit;
-  border: 1px solid #d6d6d6;
-  border-radius: 10px;
-  padding: 8px 10px;
+.empty-page{
+  min-height:calc(100vh - 120px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  box-sizing:border-box;
 }
-.list {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 900px) {
-  .list { grid-template-columns: repeat(2, 1fr); }
-}
-
-.toolbar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-.toolbar select {
-  background: #fff;
-  color: #111827;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  padding: 10px 14px;
-  cursor: pointer;
-  transition: all .2s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,.05);
-}
-.toolbar select:hover {
-  border-color: #2563eb;
-  box-shadow: 0 2px 6px rgba(37,99,235,.2);
+.empty-card{
+  background:color-mix(in oklab, var(--primary) 18%, var(--surface));
+  color:var(--text);
+  font-size:1.6rem;
+  font-weight:700;
+  padding:28px 48px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  box-shadow:var(--elev-2);
+  text-align:center;
+  width:auto;
+  display:inline-block;
 }
 
-.empty-page {
-
-  min-height: calc(100vh - 120px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  box-sizing: border-box;
-}
-
-.empty-card {
-  background: #174a7c;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 700;
-  padding: 28px 48px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.18);
-  text-align: center;
-  width: auto;
-  display: inline-block;
-}
 .progress{
   width:100%;
   height:10px;
@@ -84,11 +75,8 @@ select {
   border-radius:999px;
   overflow:hidden;
 }
-.progress .bar{
-  width:100%;
-  height:100%;
-}
-.progress .bar.ok{      background:#22c55e; }
-.progress .bar.warn{    background:#f59e0b; }
-.progress .bar.late{    background:#ef4444; }
-.progress .bar.unknown{ background:#e5e7eb; }
+.progress .bar{width:100%;height:100%}
+.progress .bar.ok{background:#22c55e}
+.progress .bar.warn{background:#f59e0b}
+.progress .bar.late{background:#ef4444}
+.progress .bar.unknown{background:#e5e7eb}

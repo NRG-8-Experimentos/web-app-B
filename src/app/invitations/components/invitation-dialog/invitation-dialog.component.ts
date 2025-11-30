@@ -29,9 +29,9 @@ export class InvitationDialogComponent {
     this.detailsService.acceptOrDeclineInvitation(this.invitation.id, true)
       .subscribe({
         next: () => {
-          this.dialogRef.close(true); // Cerramos el diálogo y enviamos 'true' como señal
+          this.dialogRef.close(true);
         },
-        error: err => { /* mostrar error */ }
+        error: err => {  }
       });
   }
 

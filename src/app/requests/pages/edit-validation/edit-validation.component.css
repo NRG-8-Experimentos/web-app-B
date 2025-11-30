@@ -11,7 +11,7 @@
 .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
 
 .field { display: grid; gap: 6px; }
-.field label { font-weight: 600; color: #374151; }
+.field label { font-weight: 600; }
 .field input, .field textarea {
   width: 100%;
   background: #fff;
@@ -64,3 +64,70 @@
 .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,.18); }
 .btn-save { background: #22c55e; }
 .btn-cancel { background: #ef4444; }
+:host { color: var(--text); }
+.edit {
+  background: var(--surface);
+  border-color: var(--border);
+}
+.field label { color: var(--text); }
+.field input,
+.field textarea {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--muted); }
+
+:host ::ng-deep .assignee-field .mdc-notched-outline__leading,
+:host ::ng-deep .assignee-field .mdc-notched-outline__notch,
+:host ::ng-deep .assignee-field .mdc-notched-outline__trailing {
+  border-color: var(--border) !important;
+}
+
+:host ::ng-deep .assignee-field .mdc-floating-label { color: var(--muted) !important; }
+:host ::ng-deep .assignee-field.mdc-text-field--focused .mdc-floating-label { color: var(--text) !important; }
+
+:host ::ng-deep .assignee-field .mat-mdc-select-trigger,
+:host ::ng-deep .assignee-field .mat-mdc-select-value,
+:host ::ng-deep .assignee-field .mat-mdc-select-value-text,
+:host ::ng-deep .assignee-field .mat-mdc-select-min-line,
+:host ::ng-deep .assignee-field .mat-mdc-select-trigger .mat-mdc-select-value-text span {
+  color: var(--text) !important;
+}
+
+:host-context([data-theme="dark"]) ::ng-deep .assignee-field .mat-mdc-select-trigger,
+:host-context([data-theme="dark"]) ::ng-deep .assignee-field .mat-mdc-select-value,
+:host-context([data-theme="dark"]) ::ng-deep .assignee-field .mat-mdc-select-value-text,
+:host-context([data-theme="dark"]) ::ng-deep .assignee-field .mat-mdc-select-min-line,
+:host-context([data-theme="dark"]) ::ng-deep .assignee-field .mat-mdc-select-trigger .mat-mdc-select-value-text span,
+:host-context(.dark) ::ng-deep .assignee-field .mat-mdc-select-trigger,
+:host-context(.dark) ::ng-deep .assignee-field .mat-mdc-select-value,
+:host-context(.dark) ::ng-deep .assignee-field .mat-mdc-select-value-text,
+:host-context(.dark) ::ng-deep .assignee-field .mat-mdc-select-min-line,
+:host-context(.dark) ::ng-deep .assignee-field .mat-mdc-select-trigger .mat-mdc-select-value-text span {
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .assignee-field .mat-mdc-select-arrow {
+  color: var(--muted) !important;
+  fill: var(--muted) !important;
+}
+
+:host ::ng-deep .cdk-overlay-pane .mat-mdc-select-panel.assignee-panel {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--elev-2, 0 10px 30px rgba(0,0,0,.25)) !important;
+}
+
+:host ::ng-deep .assignee-panel .mat-mdc-option {
+  color: var(--text) !important;
+}
+:host ::ng-deep .assignee-panel .mat-mdc-option + .mat-mdc-option {
+  border-top: 1px solid var(--border) !important;
+}
+:host ::ng-deep .assignee-panel .mat-mdc-option:hover,
+:host ::ng-deep .assignee-panel .mat-mdc-option.mdc-list-item--selected {
+  background: var(--surface-2) !important;
+}

@@ -6,6 +6,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-leader',
+  standalone: true,
   imports: [CommonModule, TranslatePipe],
   templateUrl: './main-leader.component.html',
   styleUrl: './main-leader.component.css'
