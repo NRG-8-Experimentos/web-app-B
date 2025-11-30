@@ -1,25 +1,48 @@
-.language-switcher{
+.language-switcher {
   background-color: #4A90E2;
-}
-.language-option{
-  color: white;
-}
-.language-switcher{
-  background-color: #4A90E2;
-  border-radius: 8px;
+  border-radius: 6px;
+  width: 100%;
+  display: flex;
 }
 
-.language-option{
+.language-option {
   color: #000 !important;
+  flex: 1;
+  font-size: 11px;
 }
 
-.language-switcher .mat-button-toggle-label-content{
+::ng-deep .language-switcher {
+  height: 2rem !important;
+}
+
+::ng-deep .language-switcher .mat-button-toggle {
+  height: 2rem !important;
+  flex: 1;
+}
+
+::ng-deep .language-switcher .mat-button-toggle-button {
+  height: 2rem !important;
+  padding: 0 0.5rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .language-switcher .mat-button-toggle-label-content {
   color: #000 !important;
+  line-height: 2rem !important;
+  padding: 0 !important;
+  font-size: 11px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.language-switcher .mat-button-toggle-checked .mat-button-toggle-label-content{
+
+::ng-deep .language-switcher .mat-button-toggle-checked .mat-button-toggle-label-content {
   color: #000 !important;
+  font-weight: 600 !important;
 }
 
-
-
-
+::ng-deep .language-switcher .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  line-height: 2rem !important;
+}
