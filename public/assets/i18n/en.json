@@ -420,7 +420,24 @@
         "done": "Done",
         "expired": "Expired"
       },
-      "noDate": "No date"
+      "noDate": "No date",
+      "dialog": {
+        "loading": "Loading task details...",
+        "title": "Task details",
+        "noDescription": "No description available.",
+        "description": "Description",
+        "dueDate": "Due date",
+        "createdAt": "Created at",
+        "updatedAt": "Updated at",
+        "status": "Status",
+        "assignedTo": "Assigned to",
+        "group": "Group",
+        "id": "Id",
+        "rearranged": "Rearranged",
+        "timePassed": "Time passed",
+        "timeUnit": "mins",
+        "close": "Close"
+      }
     }
   },
   "appearance": {
