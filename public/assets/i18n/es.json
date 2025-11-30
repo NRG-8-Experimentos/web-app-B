@@ -366,7 +366,24 @@
         "done": "Finalizado",
         "expired": "Vencido"
       },
-      "noDate": "Sin fecha"
+      "noDate": "Sin fecha",
+      "dialog": {
+        "loading": "Cargando detalles de la tarea...",
+        "title": "Detalles de la tarea",
+        "noDescription": "No hay descripción disponible.",
+        "description": "Descripción",
+        "dueDate": "Vence",
+        "createdAt": "Creada",
+        "updatedAt": "Actualizada",
+        "status": "Estado",
+        "assignedTo": "Asignado a",
+        "group": "Grupo",
+        "id": "Id",
+        "rearranged": "Reprogramada",
+        "timePassed": "Tiempo transcurrido",
+        "timeUnit": "min",
+        "close": "Cerrar"
+      }
     }
   },
   "analyticsLeader": {
