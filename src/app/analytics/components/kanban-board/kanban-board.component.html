@@ -18,7 +18,7 @@
           <p>{{ translationPrefix + '.noTasks' | translate }}</p>
         </div>
 
-        <div *ngFor="let task of column.tasks" class="task-card">
+        <div *ngFor="let task of column.tasks" class="task-card" (click)="openTaskDetails(task)">
           <div class="task-header">
             <h4 class="task-title">{{ task.title }}</h4>
             <span class="material-icons task-menu">more_vert</span>
@@ -57,5 +57,115 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Task details dialog (visible while loading or when selectedTask is available) -->
+<div class="task-dialog-overlay" *ngIf="selectedTask || isDialogLoading" (click)="closeTaskDetails()">
+  <div class="task-dialog" (click)="$event.stopPropagation()">
+    <!-- Render loaded task when available -->
+    <ng-container *ngIf="selectedTask as st; else dialogLoading">
+      <header class="task-dialog-header">
+        <div class="dialog-header-left">
+          <div class="dialog-avatar" *ngIf="st.member?.urlImage; else noAvatar">
+            <img [src]="st.member?.urlImage" [alt]="st.member?.name">
+          </div>
+          <ng-template #noAvatar>
+            <div class="dialog-avatar dialog-avatar-fallback">
+              <span class="material-icons">assignment</span>
+            </div>
+          </ng-template>
+
+          <div class="dialog-title-block">
+            <h3>{{ st.title }}</h3>
+            <div class="dialog-subtitle">
+              <small>{{ translationPrefix + '.kanban.dialog.id' | translate }}: {{ st.id }}</small>
+              <small *ngIf="st.groupId"> • {{ translationPrefix + '.kanban.dialog.group' | translate }}: {{ st.groupId }}</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="dialog-actions">
+          <button class="dialog-close" aria-label="Close" (click)="closeTaskDetails()">&times;</button>
+        </div>
+      </header>
+
+      <section class="task-dialog-body">
+        <p class="dialog-label"><strong>{{ translationPrefix + '.kanban.dialog.description' | translate }}:</strong></p>
+        <p class="dialog-text">{{ st.description || (translationPrefix + '.kanban.dialog.noDescription' | translate) }}</p>
+
+        <div class="dialog-meta-grid">
+          <div class="meta-item">
+            <label>{{ translationPrefix + '.kanban.dialog.dueDate' | translate }}</label>
+            <div>{{ formatDate(st.dueDate) }}</div>
+          </div>
+
+          <div class="meta-item" *ngIf="st.createdAt">
+            <label>{{ translationPrefix + '.kanban.dialog.createdAt' | translate }}</label>
+            <div>{{ formatDate(st.createdAt) }}</div>
+          </div>
+
+          <div class="meta-item" *ngIf="st.updatedAt">
+            <label>{{ translationPrefix + '.kanban.dialog.updatedAt' | translate }}</label>
+            <div>{{ formatDate(st.updatedAt) }}</div>
+          </div>
+
+          <div class="meta-item">
+            <label>{{ translationPrefix + '.kanban.dialog.status' | translate }}</label>
+            <div class="status-chip">{{ st.status }}</div>
+          </div>
+
+          <div class="meta-item" *ngIf="st.timesRearranged !== undefined">
+            <label>{{ translationPrefix + '.kanban.dialog.rearranged' | translate }}</label>
+            <div>{{ st.timesRearranged }}</div>
+          </div>
+
+          <div class="meta-item" *ngIf="st.timePassed !== undefined">
+            <label>{{ translationPrefix + '.kanban.dialog.timePassed' | translate }}</label>
+            <div>{{ st.timePassed }} {{ translationPrefix + '.kanban.dialog.timeUnit' | translate }}</div>
+          </div>
+        </div>
+
+        <div *ngIf="st.member" class="dialog-member">
+          <p class="dialog-label"><strong>{{ translationPrefix + '.kanban.dialog.assignedTo' | translate }}:</strong></p>
+          <div class="member-info">
+            <img *ngIf="st.member?.urlImage" [src]="st.member.urlImage" class="member-avatar" [alt]="st.member.name">
+            <div class="member-name">{{ st.member?.name }} {{ st.member?.surname }}</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="task-dialog-footer">
+        <button class="btn" (click)="closeTaskDetails()">{{ translationPrefix + '.kanban.dialog.close' | translate }}</button>
+      </footer>
+    </ng-container>
+
+    <!-- Loading fallback while fetching details -->
+    <ng-template #dialogLoading>
+      <header class="task-dialog-header">
+        <div class="dialog-header-left">
+          <div class="dialog-avatar dialog-avatar-fallback">
+            <span class="material-icons">assignment</span>
+          </div>
+          <div class="dialog-title-block">
+            <h3>{{ translationPrefix + '.kanban.dialog.loading' | translate }}</h3>
+          </div>
+        </div>
+        <div class="dialog-actions">
+          <button class="dialog-close" aria-label="Close" (click)="closeTaskDetails()">&times;</button>
+        </div>
+      </header>
+
+      <section class="task-dialog-body">
+        <div class="dialog-loading">
+          <span class="material-icons spin">autorenew</span>
+          <p>{{ translationPrefix + '.kanban.dialog.loading' | translate }}</p>
+        </div>
+      </section>
+
+      <footer class="task-dialog-footer">
+        <button class="btn" (click)="closeTaskDetails()">{{ translationPrefix + '.kanban.dialog.close' | translate }}</button>
+      </footer>
+    </ng-template>
   </div>
 </div>
