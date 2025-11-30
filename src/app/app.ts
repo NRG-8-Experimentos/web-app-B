@@ -1,5 +1,5 @@
-import {Component, signal, ViewChild} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
+import {Component, OnInit, signal, ViewChild} from '@angular/core';
+import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {MatSidenav} from '@angular/material/sidenav';
 import {SidenavComponent} from '@app/shared/components/sidenav/sidenav.component';
 import {BodyComponent} from './shared/pages/body/body.component';
@@ -8,6 +8,10 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {DetailsService} from './shared/services/details.service';
 import {AppearanceService} from '@app/shared/services/appearance.service';
 import {AppearanceToggleComponent} from '@app/shared/components/appearance-toggle/appearance-toggle.component';
+import {CommonModule} from '@angular/common';
+import {
+  NotificationFloatingListComponent
+} from '@app/shared/components/notification-floating-list/notification-floating-list';
 
 interface SideNavToggle{
   screenWidth: number;
@@ -22,13 +26,18 @@ export const LOGOUT_OPTION = {
 
 @Component({
   selector: 'app-root',
-  imports: [SidenavComponent, BodyComponent, AppearanceToggleComponent],
-  templateUrl: './app.html',
+  standalone: true,
+  imports: [
+    CommonModule,
+    SidenavComponent,
+    BodyComponent,
+    NotificationFloatingListComponent,
+  ],  templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
 
 
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('Synhub');
   showSideBar = false;
   redirect = '';
@@ -71,6 +80,10 @@ export class App {
     });
     this.setRedirect();
   }
+
+  ngOnInit(): void {
+        throw new Error("Method not implemented.");
+    }
 
   private setRedirect() {
     if (this.isLeader) {

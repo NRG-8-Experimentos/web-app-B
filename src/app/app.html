@@ -1,5 +1,10 @@
 <main>
-  <div class="screen app-bg">
+
+  @if (showSideBar) {
+    <app-notification-floating-list></app-notification-floating-list>
+  }
+
+  <div class="screen">
     @if (showSideBar) {
       <app-sidenav
         [navData]="isLeader ? optionsLeader : optionsMember"
