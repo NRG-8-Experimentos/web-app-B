@@ -317,6 +317,7 @@
     "noMembers": "Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo"
   },
   "analyticsMember": {
+    "noTasks": "No hay tareas disponibles.",
     "overview": {
       "title": "Resumen General",
       "label": "Estado de las tareas",
@@ -369,6 +370,7 @@
     }
   },
   "analyticsLeader": {
+    "noTasks": "No hay tareas disponibles.",
     "overview": {
       "title": "Resumen General",
       "label": "Estado de las tareas",

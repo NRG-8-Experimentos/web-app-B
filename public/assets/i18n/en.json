@@ -317,6 +317,7 @@
     "noMembers": "Your group has no members. Share the code with your teammates so they can join the group."
   },
   "analyticsMember": {
+    "noTasks": "No tasks available.",
     "overview": {
       "title": "General Summary",
       "label": "Task status",
@@ -369,6 +370,7 @@
     }
   },
   "analyticsLeader": {
+    "noTasks": "No tasks available.",
     "overview": {
       "title": "General Summary",
       "label": "Task status",
