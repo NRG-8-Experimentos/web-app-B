@@ -8,7 +8,8 @@
     <div *ngFor="let column of columns" class="kanban-column">
       <div class="column-header" [style.background-color]="column.color">
         <span class="material-icons column-icon">{{ column.icon }}</span>
-        <h3 class="column-title">{{ column.title }}</h3>
+        <!-- changed: use localized column title -->
+        <h3 class="column-title">{{ columnTitle(column) }}</h3>
         <span class="task-count">{{ column.tasks.length }}</span>
       </div>
 

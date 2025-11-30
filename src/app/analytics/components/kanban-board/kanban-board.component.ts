@@ -4,7 +4,7 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { KanbanService } from '@app/analytics/domain/services/kanban.service';
 import { KanbanColumn } from '@app/analytics/domain/models/kanban-column.model';
 import { Task } from '@app/tasks/model/task.model';
-import { TasksApiService } from '@app/tasks/services/tasks-api.service';
+  import { TasksApiService } from '@app/tasks/services/tasks-api.service';
 
 @Component({
   selector: 'app-kanban-board',
@@ -78,5 +78,23 @@ export class KanbanBoardComponent implements OnChanges {
     if (this.selectedTask || this.isDialogLoading) {
       this.closeTaskDetails();
     }
+  }
+
+  // New: map Task.status to i18n keys (matches en/es JSON under *.kanban.columns)
+  private statusToColumnKey(status: Task['status']): string {
+    switch (String(status)) {
+      case 'ON_HOLD': return 'onHold';
+      case 'IN_PROGRESS': return 'inProgress';
+      case 'COMPLETED': return 'completed';
+      case 'DONE': return 'done';
+      case 'EXPIRED': return 'expired';
+      default: return String(status).toLowerCase();
+    }
+  }
+
+  // Return translated title for a column (uses translationPrefix so it works for analyticsLeader/analyticsMember)
+  columnTitle(col: KanbanColumn): string {
+    const key = this.statusToColumnKey(col.status);
+    return this.translateService.instant(`${this.translationPrefix}.kanban.columns.${key}`);
   }
 }
