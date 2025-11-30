@@ -121,7 +121,15 @@
   "viewTask": {
     "return": "Return",
     "loading": "Loading task details...",
-    "noDescription": "No description available."
+    "noDescription": "No description available.",
+    "comments": "Comments",
+    "addComment": "Add Comment",
+    "cancelComment": "Cancel",
+    "commentPlaceholder": "Write your comment here...",
+    "submitComment": "Submit Comment",
+    "saving": "Saving...",
+    "noComments": "No comments yet.",
+    "loadingComments": "Loading comments..."
   },
   "taskMember": {
     "state": "State:",

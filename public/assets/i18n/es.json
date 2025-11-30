@@ -121,7 +121,15 @@
   "viewTask": {
     "return": "Volver",
     "loading": "Cargando detalles de la tarea...",
-    "noDescription": "No hay descripción disponible."
+    "noDescription": "No hay descripción disponible.",
+    "comments": "Comentarios",
+    "addComment": "Agregar Comentario",
+    "cancelComment": "Cancelar",
+    "commentPlaceholder": "Escribe tu comentario aquí...",
+    "submitComment": "Enviar Comentario",
+    "saving": "Guardando...",
+    "noComments": "No hay comentarios aún.",
+    "loadingComments": "Cargando comentarios..."
   },
   "taskMember": {
     "state": "Estado:",

@@ -21,7 +21,7 @@
   </div>
   @if (task.status === 'IN_PROGRESS') {
     <footer class="actions">
-      <button type="button" class="btn btn-comment" (click)="$event.stopPropagation(); goComment()">
+      <button type="button" class="btn btn-comment hidden" (click)="$event.stopPropagation(); goComment()">
         {{'memberTaskItem.sendComment' | translate}}
       </button>
       <button type="button" class="btn btn-done" (click)="$event.stopPropagation(); markDone()">
