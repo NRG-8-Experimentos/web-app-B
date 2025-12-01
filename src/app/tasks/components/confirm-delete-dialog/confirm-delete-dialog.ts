@@ -2,13 +2,14 @@ import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import {TranslatePipe} from '@ngx-translate/core';
 
 type Data = { title: string; message: string; okText?: string; cancelText?: string };
 
 @Component({
   selector: 'confirm-delete-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MatButtonModule],
+  imports: [CommonModule, MatDialogModule, MatButtonModule, TranslatePipe],
   templateUrl: './confirm-delete-dialog.html'
 })
 export class ConfirmDeleteDialogComponent {

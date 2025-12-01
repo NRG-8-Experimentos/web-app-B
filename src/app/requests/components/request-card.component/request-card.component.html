@@ -13,7 +13,7 @@
         <div class="inner-card-content">
           <div class="task-title">{{request.task.title}}</div>
           <div class="divider"></div>
-          <div class="comment">Comentario: {{request.description}}</div>
+          <div class="comment">{{'validationPage.comment'|translate}} {{request.description}}</div>
         </div>
       </div>
       <div class="icon-box" [ngStyle]="{'background': setTypeColor(request.requestType)}">

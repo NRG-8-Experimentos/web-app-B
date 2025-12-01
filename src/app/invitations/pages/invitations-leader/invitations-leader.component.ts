@@ -2,11 +2,14 @@ import {Component, inject} from '@angular/core';
 import {InvitationListComponent} from '../../components/invitation-list/invitation-list.component';
 import {InvitationsApiService} from '../../services/invitations-api.service';
 import {Invitation} from '../../model/invitation.entity';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitations-leader',
+  standalone: true,
   imports: [
-    InvitationListComponent
+    InvitationListComponent,
+    TranslatePipe
   ],
   templateUrl: './invitations-leader.component.html',
   styleUrl: './invitations-leader.component.css'

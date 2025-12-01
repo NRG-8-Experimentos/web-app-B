@@ -6,6 +6,7 @@ import { AnalyticsLeaderApiService } from '../../services/analytics-leader-api.s
 import { AnalyticsMemberComponent } from '../../components/analytics-member/analytics-member.component';
 import { MemberApiService } from '../../services/member-api.service';
 import { TaksApiService } from '../../services/taks-api.service';
+import { Task } from '@app/tasks/model/task.model';
 
 @Component({
   selector: 'app-analytics-member-page',
@@ -24,6 +25,7 @@ export class AnalyticsMemberPageComponent implements OnInit {
   overview: any = {};
   loadingTasks: boolean = false;
   memberTasks: any[] = [];
+  kanbanTasks: Task[] = [];
   rescheduled: any = {};
   avgCompletion: any = {};
   totalInProgressDuration: number = 0;
@@ -78,6 +80,7 @@ export class AnalyticsMemberPageComponent implements OnInit {
 
       this.memberApiService.getTasksForMember(memberId).subscribe(memberTasks => {
         this.memberTasks = Array.isArray(memberTasks) ? memberTasks : [];
+        this.kanbanTasks = this.transformTasksForKanban(this.memberTasks);
         this.loadingTasks = false;
 
         const inProgressTasks = this.memberTasks.filter(t => t.status === 'IN_PROGRESS');
@@ -114,6 +117,7 @@ export class AnalyticsMemberPageComponent implements OnInit {
         }
       }, err => {
         this.memberTasks = [];
+        this.kanbanTasks = [];
         this.loadingTasks = false;
         console.error(
           'Error en api/v1/member/tasks: Verifica que la ruta exista en el backend y que el proxy/conf esté correctamente configurado.'
@@ -137,6 +141,27 @@ export class AnalyticsMemberPageComponent implements OnInit {
       this.loadingTasks = false;
       console.error('Error al cargar los datos del miembro:', err);
     }
+  }
+
+  private transformTasksForKanban(tasks: any[]): Task[] {
+    return tasks.map(task => ({
+      id: task.id,
+      title: task.title,
+      description: task.description,
+      status: task.status,
+      dueDate: task.dueDate,
+      createdAt: task.createdAt,
+      updatedAt: task.updatedAt,
+      timesRearranged: task.timesRearranged || 0,
+      timePassed: task.timePassed || 0,
+      member: task.member ? {
+        id: task.member.id,
+        name: task.member.name,
+        surname: task.member.surname,
+        urlImage: task.member.urlImage
+      } : null,
+      groupId: task.groupId || task.group?.id
+    }));
   }
 
   formatAvgCompletionTime(minutes: number): string {

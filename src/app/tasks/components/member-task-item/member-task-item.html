@@ -6,10 +6,10 @@
 
   <div class="divider"></div>
 
-  <p class="desc">{{ task.description || 'Sin descripción' }}</p>
+  <p class="desc">{{ task.description || ('memberTaskItem.noDescription'|translate) }}</p>
 
   <div class="meta">
-    <span class="muted" *ngIf="task.dueDate">Fecha de entrega: {{ task.dueDate | date:'dd/MM/yyyy' }}</span>
+    <span class="muted" *ngIf="task.dueDate">{{'memberTaskItem.dueDate' | translate}}: {{ task.dueDate | date:'dd/MM/yyyy' }}</span>
   </div>
 
   <div class="progress">
@@ -17,15 +17,15 @@
   </div>
 
   <div class="meta">
-    <span class="muted">Tiempo restante: {{ remainingLabel }}</span>
+    <span class="muted">{{'memberTaskItem.remainingTime' | translate}}: {{ remainingLabel }}</span>
   </div>
   @if (task.status === 'IN_PROGRESS') {
     <footer class="actions">
-      <button type="button" class="btn btn-comment" (click)="$event.stopPropagation(); goComment()">
-        Enviar un comentario
+      <button type="button" class="btn btn-comment hidden" (click)="$event.stopPropagation(); goComment()">
+        {{'memberTaskItem.sendComment' | translate}}
       </button>
       <button type="button" class="btn btn-done" (click)="$event.stopPropagation(); markDone()">
-        Marcar como completada
+        {{'memberTaskItem.markDone' | translate}}
       </button>
     </footer>
   }

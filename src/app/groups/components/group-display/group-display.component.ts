@@ -10,6 +10,7 @@ import {GroupService} from '@app/groups/services/group.service';
 import {ShortMember} from '@app/shared/model/short-member.entity';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-dialog/confirmation-dialog.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 
 @Component({
@@ -17,7 +18,8 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
   imports: [
     NoGroupDisplayComponent,
     ProfileImageDisplayComponent,
-    MatIconModule
+    MatIconModule,
+    TranslatePipe
   ],
   template: `
     <div class="w-full h-full">
@@ -29,7 +31,7 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
         @if (hasGroup){
           <div class="w-full h-full grid grid-cols-2 gap-16 min-h-0">
             <div class="w-full h-full flex flex-col gap-7">
-              <h2 class="text-2xl font-bold">Grupo</h2>
+              <h2 class="text-2xl font-bold">{{ 'groupDisplay.groupTitle' | translate }}</h2>
 
               <app-profile-image-display [groupName]="group.name" alt="Imagen del grupo" [imgSrc]="group.imgUrl"/>
 
@@ -49,10 +51,10 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
               </div>
             </div>
             <div class="h-full flex flex-col gap-7 min-h-0">
-              <h2 class="text-2xl font-bold">Miembros</h2>
+              <h2 class="text-2xl font-bold">{{ 'groupDisplay.membersTitle' | translate }}</h2>
               @if (hasMembers) {
-                <div class="flex-1  rounded-3xl bg-[#F4F4F4] p-8 text-black text-center text-xl min-h-0">
-                  <div class="bg-white rounded-2xl h-full">
+                <div class="flex-1 rounded-3xl p-8 text-center text-xl min-h-0 themed-panel">
+                  <div class="rounded-2xl h-full themed-inner">
                     <div class="flex flex-col p-4 gap-4 h-full overflow-y-auto">
 
                       @for (member of members; track member.id) {
@@ -75,19 +77,100 @@ import {ConfirmationDialogComponent} from '@app/shared/components/confirmation-d
                 </div>
               } @else {
                 <div class="flex-1 w-full h-full rounded-3xl bg-[#1A4E85] p-8 text-white text-center text-xl ">
-                  Tu grupo no tiene integrantes, brindale el código a tus compañeros de proyecto para poder unirse al grupo
+                  {{ 'groupDisplay.noMembers' | translate }}
                 </div>
               }
             </div>
           </div>
         } @else {
-          <h2 class="text-2xl font-bold">Grupo</h2>
+          <h2 class="text-2xl font-bold">{{ 'groupDisplay.groupTitle' | translate }}</h2>
           <app-no-group-display/>
         }
       }
     </div>
   `,
-  styles: ``
+  styles: `
+    :host .bg-\\[\\#F4F4F4\\] {
+      background: var(--surface) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: var(--elev-1, 0 2px 8px rgba(0, 0, 0, .06)) !important;
+    }
+
+    :host .bg-white {
+      background: var(--surface-2) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+    }
+
+    :host .text-black {
+      color: var(--text) !important;
+    }
+
+    :host .bg-gray-300 {
+      background: color-mix(in oklab, var(--surface-2) 70%, #ffffff 30%) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+      transition: background .12s ease, color .12s ease, border-color .12s ease;
+    }
+
+    :host .bg-gray-300:hover {
+      background: #ef4444 !important;
+      color: #ffffff !important;
+      border-color: #ef4444 !important;
+    }
+
+    :host h3 {
+      color: var(--text) !important;
+    }
+
+    :host .overflow-y-auto {
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+
+    :host .overflow-y-auto::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    :host .overflow-y-auto::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 999px;
+    }
+
+    :host .overflow-y-auto::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    :host .themed-panel{
+      background: var(--surface) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 1.5rem;              /* mantiene tu rounded-3xl */
+      box-shadow: var(--elev-1, 0 2px 8px rgba(0,0,0,.06)) !important;
+    }
+
+    :host .themed-inner{
+      background: var(--surface-2) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 1rem;
+    }
+
+    :host .bg-gray-300{
+      background: color-mix(in oklab, var(--surface-2) 70%, #ffffff 30%) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+      transition: background .12s ease, color .12s ease, border-color .12s ease;
+    }
+    :host .bg-gray-300:hover{
+      background: #ef4444 !important;
+      color: #fff !important;
+      border-color: #ef4444 !important;
+    }
+
+
+  `
 })
 export class GroupDisplayComponent {
 

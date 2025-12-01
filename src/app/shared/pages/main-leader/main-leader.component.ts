@@ -2,10 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GroupsApiService } from '@app/analytics/services/groups-api.service';
 import { TaksApiService } from '@app/analytics/services/taks-api.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-leader',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './main-leader.component.html',
   styleUrl: './main-leader.component.css'
 })

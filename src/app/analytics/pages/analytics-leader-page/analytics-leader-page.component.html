@@ -1,6 +1,6 @@
 <div class="analytics-leader-screen">
   <ng-container *ngIf="loading">
-    <div class="loading-container">Cargando métricas...</div>
+    <div class="loading-container">{{'commentTask.loading' | translate}}</div>
   </ng-container>
   <ng-container *ngIf="error">
     <div class="error-container">{{ error }}</div>
@@ -11,7 +11,9 @@
       [membersWithRescheduled]="membersWithRescheduled"
       [avgCompletionMembers]="avgCompletionMembers"
       [inProgressDurationsMembers]="inProgressDurationsMembers"
-      [formatInProgressDuration]="formatInProgressDuration">
+      [formatInProgressDuration]="formatInProgressDuration"
+      [kanbanTasks]="kanbanTasks"
+      [loadingTasks]="loadingTasks">
     </app-analytics-leader>
   </ng-container>
 </div>

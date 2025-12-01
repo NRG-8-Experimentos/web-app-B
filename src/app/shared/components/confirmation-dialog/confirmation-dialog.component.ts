@@ -4,6 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-confirmation-dialog',
+  standalone: true,
   imports: [MatButtonModule, MatDialogModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `

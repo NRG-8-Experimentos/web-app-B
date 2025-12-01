@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { environment } from '@env/environment';
+import {TranslatePipe} from '@ngx-translate/core';
 
 export type TaskStatus = 'IN_PROGRESS' | 'COMPLETED' | 'EXPIRED' | 'ON_HOLD' | 'DONE';
 
@@ -28,14 +29,16 @@ export class Task {
 @Component({
   selector: 'app-task-member-details',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslatePipe],
   template: `
     <div class="p-8 bg-white min-h-screen">
       <label class="text-xl mb-6 block font-semibold text-slate-900">
-        Estado:
+        {{ 'taskMemberDetails.filterLabel' | translate }}
         <select class="rounded px-4 py-2 ml-2 text-lg border border-gray-300" [(ngModel)]="selectedStatus" (change)="filtrar()">
-          <option value="ALL">todos</option>
-          <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+          <option value="ALL">{{ 'taskMemberDetails.options.all' | translate }}</option>
+          <option *ngFor="let status of statusOptions" [value]="status">
+            {{ 'taskMemberDetails.options.' + status | translate }}
+          </option>
         </select>
       </label>
       <div
@@ -71,23 +74,30 @@ export class Task {
             </div>
           </div>
           <div class="text-lg text-gray-500 text-center tracking-wide mt-4 mb-0 font-medium">
-            Vence: {{ task.dueDate | date:'MMM d, yyyy' }}
+            {{ 'taskMemberDetails.dueDate' | translate }} {{ task.dueDate | date:'MMM d, yyyy' }}
           </div>
         </div>
       </div>
       <ng-template #noTasks>
-        <p class="text-slate-700 text-xl mt-10">No hay tareas para mostrar para este miembro.</p>
+        <p class="text-slate-700 text-xl mt-10">{{ 'taskMemberDetails.noTasks' | translate }}</p>
       </ng-template>
     </div>
   `,
   styles: [`
+    :host{ display:block; background:var(--bg); color:var(--text); }
+    :host .bg-white{ background:var(--surface) !important; }
+    :host .text-slate-900{ color:var(--text) !important; }
+    :host .border-gray-100{ border-color:var(--border) !important; }
+    :host .border-gray-200{ border-color:var(--border) !important; }
+    :host .bg-gray-50{ background:var(--surface-2) !important; color:var(--text) !important; }
+    :host .text-gray-500{ color:var(--muted) !important; }
+
     @media (min-width: 640px) {
-      .tasks-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .tasks-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    select { background: #fff; }
+    select { background: var(--surface); color: var(--text); border-color: var(--border); }
   `]
+
 })
 export class TaskMemberDetailsComponent implements OnInit {
   tasks: Task[] = [];

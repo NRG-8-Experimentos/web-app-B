@@ -7,6 +7,13 @@ import {Leader} from '../../model/leader.entity';
 import {Member} from '../../model/member.entity';
 import {LOGOUT_OPTION} from '../../../app';
 import {DomSanitizer} from '@angular/platform-browser';
+import {TranslatePipe} from '@ngx-translate/core';
+import {LanguageSwitcherComponent} from '@app/iam/components/language-switcher/language-switcher';
+import { AppearanceToggleComponent } from '@app/shared/components/appearance-toggle/appearance-toggle.component';
+import {
+  AppearanceCompactToggleComponent
+} from '@app/shared/components/appearance-toggle/appearance-compact-toggle.component';
+
 
 interface SideNavToggle{
   screenWidth: number;
@@ -18,7 +25,11 @@ interface SideNavToggle{
   imports: [
     RouterLink,
     NgClass,
-    RouterLinkActive
+    RouterLinkActive,
+    TranslatePipe,
+    LanguageSwitcherComponent,
+    AppearanceToggleComponent,
+    AppearanceCompactToggleComponent
   ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css'],

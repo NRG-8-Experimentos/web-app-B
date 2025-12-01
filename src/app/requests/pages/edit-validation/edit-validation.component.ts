@@ -9,15 +9,17 @@ import {NgForOf, NgIf} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-validation',
+  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
     MatFormFieldModule, MatSelectModule, MatOptionModule, MatButtonModule,
     NgForOf,
-    NgIf
+    NgIf, TranslatePipe
   ],
   templateUrl: './edit-validation.component.html',
   styleUrl: './edit-validation.component.css'

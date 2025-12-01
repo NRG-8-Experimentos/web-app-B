@@ -3,10 +3,13 @@ import {Invitation} from '../../model/invitation.entity';
 import {DetailsService} from '../../../shared/services/details.service';
 import {MatDialog} from '@angular/material/dialog';
 import {InvitationDialogComponent} from '../invitation-dialog/invitation-dialog.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-invitation',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './invitation.component.html',
   styleUrl: './invitation.component.css'
 })
@@ -25,7 +28,7 @@ export class InvitationComponent {
     this.detailsService.acceptOrDeclineInvitation(this.invitation.id, false)
       .subscribe({
         next: () => { this.invitationChanged.emit(); },
-        error: err => { /* mostrar error */ }
+        error: err => {  }
       });
   }
 
@@ -36,7 +39,7 @@ export class InvitationComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.invitationChanged.emit(); // Actualiza la lista si se aceptó la invitación
+        this.invitationChanged.emit();
       }
     });
   }

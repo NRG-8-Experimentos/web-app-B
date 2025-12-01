@@ -4,13 +4,16 @@ import {RequestCardListComponent} from "@app/requests/components/request-card-li
 import {RequestApiService} from '@app/requests/services/request-api.service';
 import {Request} from '@app/requests/model/request.entity';
 import {FormsModule} from '@angular/forms';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-requests-member',
+  standalone: true,
   imports: [
     CommonModule,
     RequestCardListComponent,
-    FormsModule
+    FormsModule,
+    TranslatePipe
   ],
   templateUrl: './requests-member.component.html',
   styleUrl: './requests-member.component.scss'
@@ -38,7 +41,7 @@ export class RequestsMemberComponent {
   private getData() {
     this.requestApiService.getMemberRequests().subscribe((response: Array<Request>) => {
       this.allRequests.set(response);
-      this.requests = response; // para compatibilidad con el input actual
+      this.requests = response;
     }, error => {
       console.error('There was an error fetching requests!', error);
     });
