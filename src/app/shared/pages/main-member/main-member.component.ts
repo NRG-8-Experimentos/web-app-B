@@ -4,11 +4,14 @@ import { DetailsService } from '@app/shared/services/details.service';
 import { Member } from '@app/shared/model/member.entity';
 import { TaksApiService } from '@app/analytics/services/taks-api.service';
 import {TranslatePipe} from '@ngx-translate/core';
+import {
+  NotificationFloatingListComponent
+} from '@app/shared/components/notification-floating-list/notification-floating-list';
 
 @Component({
   selector: 'app-main-member',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe, NotificationFloatingListComponent],
   templateUrl: './main-member.component.html',
   styleUrl: './main-member.component.css'
 })

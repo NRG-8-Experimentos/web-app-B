@@ -1,0 +1,21 @@
+<div *ngIf="notifications.length > 0" class="notification-container">
+
+  <div class="notification-card" *ngFor="let item of notifications; trackBy: trackById">
+
+    <div class="notification-content">
+      <div class="notification-icon">
+        <i class="pi pi-bell" style="font-size: 1.2rem; color: #6366f1;"></i>
+      </div>
+      <div class="notification-text">
+        <p>{{ item.message }}</p>
+        <small>{{ item.createdAt | date:'short' }}</small>
+      </div>
+    </div>
+
+    <button class="close-btn" (click)="closeNotification(item.id)" title="Marcar como leída">
+      ✖
+    </button>
+
+  </div>
+
+</div>
