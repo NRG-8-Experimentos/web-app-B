@@ -38,27 +38,31 @@
     <div class="comments-section">
       <div class="comments-header">
         <h3 class="comments-title">{{ 'viewTask.comments' | translate }}</h3>
-        <button class="btn btn--comment" (click)="toggleCommentForm()" *ngIf="canAddComments()">
-          {{ showCommentForm ? ('viewTask.cancelComment' | translate) : ('viewTask.addComment' | translate) }}
-        </button>
+        @if (task.status === 'IN_PROGRESS') {
+          <button class="btn btn--comment" (click)="toggleCommentForm()" *ngIf="canAddComments()">
+            {{ showCommentForm ? ('viewTask.cancelComment' | translate) : ('viewTask.addComment' | translate) }}
+          </button>
+        }
       </div>
 
-      <!-- Add Comment Form -->
-      <div class="comment-form" *ngIf="showCommentForm && canAddComments()">
+      @if (task.status === 'IN_PROGRESS') {
+        <!-- Add Comment Form -->
+        <div class="comment-form" *ngIf="showCommentForm && canAddComments()">
         <textarea
           class="comment-input"
           [(ngModel)]="newComment"
           [placeholder]="'viewTask.commentPlaceholder' | translate"
           rows="4"
         ></textarea>
-        <button
-          class="btn btn--submit"
-          (click)="addComment()"
-          [disabled]="!newComment.trim() || savingComment"
-        >
-          {{ savingComment ? ('viewTask.saving' | translate) : ('viewTask.submitComment' | translate) }}
-        </button>
-      </div>
+          <button
+            class="btn btn--submit"
+            (click)="addComment()"
+            [disabled]="!newComment.trim() || savingComment"
+          >
+            {{ savingComment ? ('viewTask.saving' | translate) : ('viewTask.submitComment' | translate) }}
+          </button>
+        </div>
+      }
 
       <!-- Comments List -->
       <div class="comments-list" *ngIf="!loadingComments; else loadingCommentsTpl">
