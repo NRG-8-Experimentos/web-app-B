@@ -113,12 +113,18 @@ export class App implements OnInit {
 
   optionsLeader=[
     {
+      svg: `<svg width="24" height="24" viewBox="0 -960 960 960" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M520-600v-240h320v240zM120-440v-400h320v400zm400 320v-400h320v400zm-400 0v-240h320v240zm80-400h160v-240H200zm400 320h160v-240H600zm0-480h160v-80H600zM200-200h160v-80H200zm160-80"/></svg>`,
+      path: 'leaders/main',
+      title: 'menu.dashboard'
+    },
+    {
       svg: `<svg width="24" height="24" viewBox="0 0 960 960" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 720v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65zm240 0v-65q0-32 17.5-58.5T307 550t76.5-30T480 510q53 0 97.5 10t76.5 30 49 46.5T720 655v65zm540 0v-65q0-26-6.5-49T754 563q11-2 22.5-2.5T800 560q72 0 116 26.5T960 657v63zm-455-80h311q-10-20-55.5-35T480 590t-100.5 15T325 635zm-165-115q-33 0-56.5-23.5T80 440q0-34 23.5-57T160 360q34 0 57 23t23 57q0 33-23 56.5T160 520zm640 0q-33 0-56.5-23.5T720 440q0-34 23.5-57T800 360q34 0 57 23t23 57q0 33-23 56.5T800 520zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5T480 280q51 0 85.5 34.5T600 360q0 50-34.5 85T480 480zm0-80q17 0 28.5-11.5T520 360t-11.5-28.5T480 320t-28.5 11.5T440 360t11.5 28.5T480 400z"/></svg>`,
       path: '/leaders/my-group',
       title: 'menu.leaders.myGroup'
     },
     {
-      svg: `<svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zm9.5-.5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>`,      path: 'leaders/my-group/members',
+      svg: `<svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zm9.5-.5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>`,
+      path: 'leaders/my-group/members',
       title: 'menu.leaders.members'
     },
     {
@@ -145,6 +151,11 @@ export class App implements OnInit {
   ];
 
   optionsMember=[
+    {
+      svg: `<svg width="24" height="24" viewBox="0 -960 960 960" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M520-600v-240h320v240zM120-440v-400h320v400zm400 320v-400h320v400zm-400 0v-240h320v240zm80-400h160v-240H200zm400 320h160v-240H600zm0-480h160v-80H600zM200-200h160v-80H200zm160-80"/></svg>`,
+      path: 'members/main',
+      title: 'menu.dashboard'
+    },
     {
       svg: `<svg width="24" height="24" viewBox="0 0 960 960" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 720v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65zm240 0v-65q0-32 17.5-58.5T307 550t76.5-30T480 510q53 0 97.5 10t76.5 30 49 46.5T720 655v65zm540 0v-65q0-26-6.5-49T754 563q11-2 22.5-2.5T800 560q72 0 116 26.5T960 657v63zm-455-80h311q-10-20-55.5-35T480 590t-100.5 15T325 635zm-165-115q-33 0-56.5-23.5T80 440q0-34 23.5-57T160 360q34 0 57 23t23 57q0 33-23 56.5T160 520zm640 0q-33 0-56.5-23.5T720 440q0-34 23.5-57T800 360q34 0 57 23t23 57q0 33-23 56.5T800 520zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5T480 280q51 0 85.5 34.5T600 360q0 50-34.5 85T480 480zm0-80q17 0 28.5-11.5T520 360t-11.5-28.5T480 320t-28.5 11.5T440 360t11.5 28.5T480 400z"/></svg>`,
       path: 'members/my-group',

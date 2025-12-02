@@ -76,6 +76,7 @@
     }
   },
   "menu": {
+    "dashboard": "Panel de Control",
     "logout": "Cerrar Sesión",
     "leaders": {
       "myGroup": "Mi Grupo",

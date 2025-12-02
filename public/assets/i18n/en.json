@@ -76,6 +76,7 @@
     }
   },
   "menu": {
+    "dashboard": "Dashboard",
     "logout": "Logout",
     "leaders": {
       "myGroup": "My Group",
