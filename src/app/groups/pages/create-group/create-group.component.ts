@@ -33,7 +33,7 @@ function imageUrlValidator(control: AbstractControl): ValidationErrors | null {
             <mat-form-field appearance="fill" class="custom-form-field full-width">
               <mat-label>{{ 'createGroup.fields.name.label' | translate }}</mat-label>
               <mat-icon matPrefix style="color: #888;">person</mat-icon>
-              <input matInput formControlName="name" placeholder="'createGroup.fields.name.placeholder' | translate" type="text" required>
+              <input matInput formControlName="name" placeholder="{{'createGroup.fields.name.placeholder' | translate}}" type="text" required>
               @if (createGroupForm.get('name')?.hasError){
                 <mat-error >
                   {{ 'createGroup.fields.name.required' | translate }}
@@ -103,7 +103,7 @@ export class CreateGroupComponent {
 
     this.leaderGroupService.createGroup(new CreateGroupRequest(name, imgUrl, description)).subscribe({
       next: () => {
-        this.router.navigate(['leaders/group']).then();
+        this.router.navigate(['leaders/my-group']).then();
       },
       error: (err) => {
         console.error('Error creating group', err);
