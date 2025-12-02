@@ -34,21 +34,6 @@
             </mat-error>
           </mat-form-field>
 
-          <div class="captcha-wrapper">
-            <ngx-recaptcha2
-              #captchaElem
-              [siteKey]="siteKey"
-              (reset)="handleReset()"
-              (expire)="handleExpire()"
-              (load)="handleLoad()"
-              (success)="handleSuccess($event)"
-              formControlName="recaptcha">
-            </ngx-recaptcha2>
-            <div class="captcha-error" *ngIf="loginForm.get('recaptcha')?.invalid && loginForm.get('recaptcha')?.touched">
-              {{ 'login.captcha.required' | translate }}
-            </div>
-          </div>
-
           <div class="button-container">
             <button mat-raised-button class="btn-primary" type="submit" [disabled]="loginForm.invalid">
               {{ 'login.button.sign_in' | translate }}

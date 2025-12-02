@@ -30,9 +30,6 @@ export class SignUpComponent implements OnInit {
   submitted = false;
   showPassword = false;
   showConfirmPassword = false;
-  siteKey = '6Ldred4rAAAAAO7t3yKUZ1_-cn8YU3GiZA_gcPS_';
-
-  @ViewChild('captchaElem') captchaElem?: ReCaptcha2Component;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.registerForm = this.fb.group({
@@ -43,8 +40,7 @@ export class SignUpComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       imgUrl: ['', [Validators.required, Validators.pattern('https?://.+')]],
-      role: ['', Validators.required],
-      recaptcha: ['', Validators.required]
+      role: ['', Validators.required]
     }, { validators: this.passwordsMatchValidator });
   }
 
@@ -57,15 +53,9 @@ export class SignUpComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       imgUrl: ['', [Validators.required, Validators.pattern('https?://.+')]],
-      role: ['', Validators.required],
-      recaptcha: ['', Validators.required]
+      role: ['', Validators.required]
     }, { validators: this.passwordsMatchValidator });
   }
-
-  handleSuccess(_: string): void {}
-  handleReset(): void {}
-  handleExpire(): void { this.registerForm.get('recaptcha')?.reset(); }
-  handleLoad(): void {}
 
   onSubmit(): void {
     if (this.registerForm.invalid) return;

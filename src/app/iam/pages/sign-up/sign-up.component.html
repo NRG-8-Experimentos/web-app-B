@@ -72,21 +72,6 @@
         </div>
 
         <div class="register-button-container">
-          <div class="captcha">
-            <ngx-recaptcha2
-              #captchaElem
-              [siteKey]="siteKey"
-              (reset)="handleReset()"
-              (expire)="handleExpire()"
-              (load)="handleLoad()"
-              (success)="handleSuccess($event)"
-              formControlName="recaptcha">
-            </ngx-recaptcha2>
-            <div class="captcha-error" *ngIf="registerForm.get('recaptcha')?.invalid && registerForm.get('recaptcha')?.touched">
-              {{ 'signup.captcha.required' | translate }}
-            </div>
-          </div>
-
           <div class="register-button">
             <button
               mat-raised-button

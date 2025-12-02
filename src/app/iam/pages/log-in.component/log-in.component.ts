@@ -33,10 +33,7 @@ import { LanguageSwitcherComponent } from '@app/iam/components/language-switcher
 })
 export class LogInComponent implements OnInit {
   loginForm: FormGroup;
-  siteKey = '6Ldred4rAAAAAO7t3yKUZ1_-cn8YU3GiZA_gcPS_';
   submitted = false;
-
-  @ViewChild('captchaElem') captchaElem?: ReCaptcha2Component;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private loginEventService: LoginEventService) {
     this.loginForm = this.fb.group({
@@ -48,15 +45,9 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required],
-      recaptcha: ['', Validators.required]
+      password: ['', Validators.required]
     });
   }
-
-  handleSuccess(_: string): void {}
-  handleReset(): void {}
-  handleExpire(): void { this.loginForm.get('recaptcha')?.reset(); }
-  handleLoad(): void {}
 
   onSubmit(): void {
     if (this.loginForm.invalid) return;
