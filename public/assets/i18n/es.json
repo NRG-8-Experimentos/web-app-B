@@ -1,4 +1,8 @@
 {
+  "complaints": {
+    "title": "Quejas y Sugerencias",
+    "link": "¿Tienes alguna queja o sugerencia? Háznoslo saber a traves de este formulario:"
+  },
   "login": {
     "title": "Bienvenido a Synhub",
     "username": {

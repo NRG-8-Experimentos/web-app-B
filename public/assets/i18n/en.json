@@ -1,4 +1,8 @@
 {
+  "complaints": {
+    "title": "Complaints",
+    "link": "If you have any complaints or suggestions, please contact us at via the following form:"
+  },
   "login": {
     "title": "Welcome to Synhub",
     "username": {
